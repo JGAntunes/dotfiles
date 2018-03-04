@@ -4,10 +4,10 @@ nnoremap <esc> :noh<return><esc>
 nnoremap <CR> :noh<CR><CR>
 
 " map uppercase and mixed case 
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+:command! WQ wq
+:command! Wq wq
+:command! W w
+:command! Q q
 
 " Save file using sudo, if we don't have permissions
 cnoremap w!! w !sudo tee %

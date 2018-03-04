@@ -9,24 +9,29 @@ endif
 
 " Syntax
 Plug 'tpope/vim-git'
-Plug 'moll/vim-node'
+Plug 'dag/vim-fish'
 Plug 'pangloss/vim-javascript'
-Plug 'vim-syntastic/syntastic'
-Plug 'Quramy/tsuquyomi/'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'docunext/closetag.vim'
-
-Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim'
-Plug 'leshill/vim-json'
-Plug 'tpope/vim-markdown'
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
+Plug 'moll/vim-node'
 Plug 'leafgarland/typescript-vim'
+Plug 'othree/html5.vim'
+Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
+Plug 'JulesWang/css.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
+Plug 'ap/vim-css-color'
+Plug 'styled-components/vim-styled-components'
+
 Plug 'neomake/neomake'
-Plug 'romainl/vim-qf', {'branch': 'issue#63' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+" checks for local node packages, defaults to global useful for eslint, etc
+Plug 'jaawerth/nrun.vim'
+
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -36,59 +41,60 @@ else
 endif
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install --global tern' }
 
-" Fish shell syntax
-Plug 'dag/vim-fish'
-
-" CSS and SCSS
-Plug 'JulesWang/css.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
-Plug 'ap/vim-css-color'
-Plug 'styled-components/vim-styled-components'
-
-" Actual Plugs
-Plug 'AndrewRadev/splitjoin.vim'
+" Run async stuff
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" autoclose tags
+Plug 'alvan/vim-closetag'
+" emmet support
+Plug 'mattn/emmet-vim'
+" enhanced quickfix window
+Plug 'romainl/vim-qf'
+" Snippets
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/MatchTagAlways'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'gorkunov/smartpairs.vim'
 Plug 'honza/vim-snippets'
-Plug 'jaawerth/nrun.vim'
+" Split and join lines
+Plug 'AndrewRadev/splitjoin.vim'
+" highlights matching tags
+Plug 'Valloric/MatchTagAlways'
+" Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
+" Asks to create directories in Vim when needed
 Plug 'jordwalke/VimAutoMakeDirectory'
+" fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'rizzatti/dash.vim'
+" searches for local vimrc files and loads them, useful for extra config for a specfic project
 Plug 'thinca/vim-localrc'
+" searches for the current selection, rather than the current word
 Plug 'thinca/vim-visualstar'
+" toggles comments
 Plug 'tpope/vim-commentary'
+" Provides easier unix commands like :Delete :Rename etc
 Plug 'tpope/vim-eunuch'
+" Git shortcuts like :Gblame :Gstatus etc
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-ragtag'
+" enhanced repeat of the last command
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
+" easily surround sutff with tags, brackets, quotes, etc
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
-" Colours
+" tmux
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+
+" themes and status bar
 Plug 'altercation/vim-colors-solarized'
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+
+" load configs
 source ~/playground/dotfiles/nvim/config/settings.vim
 source ~/playground/dotfiles/nvim/config/autocmds.vim
+source ~/playground/dotfiles/nvim/config/plugins.vim
 source ~/playground/dotfiles/nvim/config/keymaps.vim
 if has('nvim')
   source ~/playground/dotfiles/nvim/config/keymaps-nvim.vim
 end
-" configs for plugins
-source ~/playground/dotfiles/nvim/config/plugins.vim
 
