@@ -90,9 +90,10 @@ call plug#end()
 
 
 " load configs
-source ~/playground/dotfiles/nvim/config/settings.vim
 source ~/playground/dotfiles/nvim/config/autocmds.vim
+source ~/playground/dotfiles/nvim/config/commands.vim
 source ~/playground/dotfiles/nvim/config/plugins.vim
+source ~/playground/dotfiles/nvim/config/settings.vim
 source ~/playground/dotfiles/nvim/config/keymaps.vim
 if has('nvim')
   source ~/playground/dotfiles/nvim/config/keymaps-nvim.vim
