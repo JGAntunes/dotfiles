@@ -32,9 +32,6 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:neomake_open_list = 2
 let g:neomake_list_height = 10
 let g:neomake_javascript_enabled_makers = ['eslint', 'stylelint']
-nnoremap <leader><leader>b :ll<CR>         " go to current error/warning
-nnoremap <leader><leader>m :lnext<CR>      " next error/warning
-nnoremap <leader><leader>n :lprev<CR>      " previous error/warning
 
 " Emmet remap
 let g:user_emmet_leader_key='<C-Z>'
