@@ -10,6 +10,7 @@ brew "neovim"
 brew "python"
 brew "the_silver_searcher"
 brew "vim", args: ["with-override-system-vi"]
+brew "watchman"
 brew "wget"
 brew "yarn"
 cask "atom"
