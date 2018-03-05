@@ -11,7 +11,8 @@ runtime macros/matchit.vim
 " colors and aspect
 set background=dark
 let g:solarized_termtrans = 1
-colorscheme solarized
+" don't show error if there's no theme
+silent! colorscheme solarized
 
 " visual guideline for 120 characters
 set colorcolumn=120

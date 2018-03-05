@@ -1,5 +1,5 @@
 set -gx fish_greeting
-set keys 'fish' 'nvim' 'nvim' 'iterm2' 'ssh'
+set keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh'
 set paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Preferences/ ~/.ssh
 set dir (cd (dirname (status -f)); and pwd)
 set -e symlinks
@@ -27,6 +27,15 @@ function iterate
   for file in $files
     set src_file (string join '' $src_path '/' $file)
     set dist_file ( string join '' $dist_path '/' $file )
+    if string match -q -- "*.vim/init.vim" $dist_file
+      set dist_file ( string join '' $dist_path '/vimrc' )
+    end
+
+    if test -d $src_file; and test $file = 'config'
+      continue
+    end
+
+
     if test -d $src_file
       iterate $src_file $dist_file
     else if test -e $dist_file; and not test -L $dist_file
@@ -36,7 +45,7 @@ function iterate
         set backups $backups (string join ' ' $dist_file ' ➡️  ' $backup_name)
         create_symlink $src_file $dist_file
       end
-    else if not test -L $dist_file
+    else if not test -L $dist_file; and not test -d $src_file
       create_symlink $src_file $dist_file
     end
   end
@@ -56,6 +65,9 @@ function install_vim_plug
   set plug_url https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs $plug_url
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs $plug_url
+  # install Plugins for vim and neovim
+  vim +PlugInstall +qall
+  nvim +PlugInstall +qall
 end
 
 for key in $keys
@@ -78,6 +90,7 @@ if test (count $backups) -ge 1
   for backup  in $backups
     printf '  %s\n' $backup
   end
+  echo -e '\n\n\n'
 end
 
 install_fisherman
