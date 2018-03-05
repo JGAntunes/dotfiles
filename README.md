@@ -1,5 +1,8 @@
 # Dotfiles
-:love_hotel: $HOME is where your dotfiles are
+:love_hotel: `$HOME` is where your dotfiles are
+
+<img width="1792" alt="screen shot 2018-03-05 at 23 12 36" src="https://user-images.githubusercontent.com/2544673/37005161-ee8ddeac-20ca-11e8-9c30-88ea69d30dc6.png">
+<img width="1202" alt="screen shot 2018-03-05 at 10 22 11" src="https://user-images.githubusercontent.com/2544673/37005166-f3ba8902-20ca-11e8-868c-a3069b90d5a4.png">
 
 ## Installation
 #### Clone this repo
@@ -39,4 +42,6 @@ It will also install vim and neovim plugins, by openeing both editors running  `
 
 
 ### Post install
-All the paths should direct you to the dotfiles! There's a post_exec function inside the config.fish, that listens for any `brew install` and `brew cask install` whenever that happens, a Brewfile is dumped. From time to time make sure you commit that :shit:
+All the paths should direct you to the dotfiles! There's a `post_exec` function inside the `config.fish`, that listens for any `brew install` and `brew cask install`. Whenever that happens, a Brewfile is dumped.
+
+From time to time make sure you commit that :shit: and push it!
