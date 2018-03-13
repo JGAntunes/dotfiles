@@ -9,7 +9,7 @@
 First step, clone this repo, because I'm lazy and this is my dotfiles, they need to be placed in ~/playground/dotfiles
 
 ``` bash
-$ git clone https://github.com/epilande/dotfiles.git ~/playground/dotfiles
+$ git clone https://github.com/FabioAntunes/dotfiles.git ~/playground/dotfiles
 ```
 
 ### Run the init script
