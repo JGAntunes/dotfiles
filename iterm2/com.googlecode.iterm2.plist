@@ -64,7 +64,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>293 1273 844 294 -442 1050 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>603 1725 770 429 -442 1050 2560 1417 </string>
+	<string>165 554 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>61 379 570 377 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -633,7 +633,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.24997527689873417</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>

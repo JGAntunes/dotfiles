@@ -23,7 +23,7 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
 Plug 'ap/vim-css-color'
 Plug 'styled-components/vim-styled-components'
 
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',

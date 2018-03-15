@@ -44,10 +44,9 @@ vnoremap <leader>8 "*y
 vnoremap <leader>9 "*p
 nnoremap <leader>8 "*p
 
-" neomake
-nnoremap <leader><leader>b :ll<CR>         " go to current error/warning
-nnoremap <leader><leader>m :lnext<CR>      " next error/warning
-nnoremap <leader><leader>n :lprev<CR>      " previous error/warning
+" ale
+nmap <silent> <leader><leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <leader><leader>j <Plug>(ale_next_wrap)
 
 
 " toggle folds with space

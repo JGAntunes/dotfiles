@@ -1,14 +1,22 @@
+set -l options (fish_opt --short=f --long=force)
+argparse $options -- $argv
+
 set -gx fish_greeting
-set keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh'
-set paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Preferences/ ~/.ssh
+set keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh' '.eslintrc' '.prettierrc'
+set paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Preferences/ ~/.ssh ~/.eslintrc ~/.prettierrc
 set dir (cd (dirname (status -f)); and pwd)
 set -e symlinks
 set symlinks
 set symlinksError
 set backups
+set hasForce 0
 
 function create_symlink
-  ln -s $argv[1] $argv[2]
+  if test $isForce -ge 1
+    ln -Fs $argv[1] $argv[2]
+  else
+    ln -s $argv[1] $argv[2]
+  end
   if test $status -eq 0
     set symlinks $symlinks $argv[2]
   else
@@ -45,7 +53,7 @@ function iterate
         set backups $backups (string join ' ' $dist_file ' ➡️  ' $backup_name)
         create_symlink $src_file $dist_file
       end
-    else if not test -L $dist_file; and not test -d $src_file
+    else if not test -L $dist_file; and not test -d $src_file; or test -L $dist_file; and test $isForce -ge 1
       create_symlink $src_file $dist_file
     end
   end
@@ -58,7 +66,7 @@ function install_fisherman
 end
 
 function install_node_packages
-  npm i -g eslint stylelint tern
+  npm i -g eslint stylelint tern prettier
 end
 
 function install_vim_plug
@@ -68,6 +76,10 @@ function install_vim_plug
   # install Plugins for vim and neovim
   vim +PlugInstall +qall
   nvim +PlugInstall +qall
+end
+
+if test -n "$_flag_f"
+  set isForce 1
 end
 
 for key in $keys

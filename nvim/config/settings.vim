@@ -21,7 +21,6 @@ set colorcolumn=120
 set cursorline
 hi cursorline cterm=none term=none
 
-
 " keep cursor centered on the screen, 5 lines above and below when possible
 set scrolloff=5
 

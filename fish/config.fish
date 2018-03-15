@@ -15,9 +15,12 @@ if type "balias" > /dev/null 2>&1;
     balias evfish 'nvim ~/.config/fish/config.fish'
 end
 
+# use ag to pipe the results to fzf, ag respects the gitignore
+set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
 set -gx DOTFILES ~/playground/dotfiles
-set -gx PATH /usr/local/homebrew/bin $PATH
-
+if test (uname -s) = 'Darwin'
+  set -gx PATH /usr/local/homebrew/bin $PATH
+end
 
 function postexec --on-event fish_postexec
   if test (count $argv) -ge 1
