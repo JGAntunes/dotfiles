@@ -30,15 +30,20 @@ install_brew () {
 
 install_from_brewfile () {
   $brew_path update --force
-  echo "Installing brew dependencies, it will take a while. Time for a ☕️"
+  echo "Installing brew dependencies, it will take 💩💩💩 loads of time. Time for a ☕️"
   $brew_path bundle --verbose --force
   # install python support for neovim
   pip3 install --user neovim
 }
 
 set_fish_shell () {
-  echo $fish_path | sudo tee -a /etc/shells
-  chsh -s $fish_path
+  if type $fish_path > /dev/null; then
+    echo $fish_path | sudo tee -a /etc/shells
+    sudo chsh -s $fish_path
+
+    # start yolo.fish
+    $fish_path yolo.fish
+  fi
 }
 
 install_powerfonts () {
@@ -58,19 +63,14 @@ install_nvm () {
   nvm install --lts
 }
 
-start_yolo_fish () {
-  $fish_path yolo.fish
-}
-
-
 config_git
 install_nvm
+install_powerfonts
 if [ "$(uname)" == "Darwin" ]; then
   touch ~/.hushlogin
   install_brew
   install_from_brewfile
 fi
-set_fish_shell
 
-install_powerfonts
+set_fish_shell
 start_yolo_fish
