@@ -32,17 +32,17 @@ function postexec --on-event fish_postexec
       brew bundle dump --force --file=$file
 
       read -l -P 'Do you want to continue? [y/N] ' confirm
-			if test $confirm = 'Y' -o $confirm = 'y' -o $confirm = 'yes';
-				pushd $DOTFILES
-				set files (git diff --name-only)
-				if test (count $files) -eq 1; and set -l index (contains -i -- 'Brewfile' $files)
-					git commit -am "Brewfile"
-					git push
-				else
-					echo "Multiple files have changed, please do a manual commit"
-				end
-				popd
-			end
+      if test $confirm = 'Y' -o $confirm = 'y' -o $confirm = 'yes';
+        pushd $DOTFILES
+        set files (git diff --name-only)
+        if test (count $files) -eq 1; and set -l index (contains -i -- 'Brewfile' $files)
+          git commit -am "Updated Brewfile :beer:"
+          git push
+        else
+          echo "Multiple files have changed, please do a manual commit"
+        end
+        popd
+      end
     end
   end
 end
