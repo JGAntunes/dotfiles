@@ -31,7 +31,7 @@ function postexec --on-event fish_postexec
       set file (string join '' $DOTFILES '/Brewfile')
       brew bundle dump --force --file=$file
 
-      read -l -P 'Do you want to continue? [y/N] ' confirm
+      read -l -P 'Commit Brewfile? [y/N] ' confirm
       if test $confirm = 'Y' -o $confirm = 'y' -o $confirm = 'yes';
         pushd $DOTFILES
         set files (git diff --name-only)

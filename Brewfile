@@ -14,6 +14,7 @@ brew "watchman"
 brew "wget"
 brew 'yarn', args: ['without-node']
 cask "atom"
+cask "flux"
 cask "google-chrome"
 cask "iterm2"
 cask "spotify"
