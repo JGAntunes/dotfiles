@@ -123,7 +123,7 @@ function test_args --no-scope-shadowing
   end
 
   if test -n "$_flag_m"; or test $hasNoArgs -eq 0
-    install_fihserman
+    install_fisherman
   end
 
   if test -n "$_flag_v"; or test $hasNoArgs -eq 0

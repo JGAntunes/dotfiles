@@ -40,6 +40,18 @@ After that it will install:
 
 It will also install vim and neovim plugins, by openeing both editors running  `n?vim +PlugInstall +qall`
 
+#### Args
+By default `yolo.fish` runs all the commands and ignores any existing symlinks in place. Sometimes it's useful to just rerun the symlink recreation, or just reinstall n?vim Plugins.
+`yolo.fish` accepts multiple args to just run parts of the script:
+* `-f/--force` - it will overwrite existing symlinks
+
+The next args allows you to run the script in a granular way, feel free to combine multiple args
+* `-n/--node` - install global packages.
+* `-m/--fisherman` - install fisherman and it's plugins.
+* `-s/--symlink` - create symlinks, this options will ignore already created symlinks. Combine with the `-f/--force`
+* `-v/--vimplug` - install vim and nvim Plugins.
+
+
 
 ### Post install
 All the paths should direct you to the dotfiles! There's a `post_exec` function inside the `config.fish`, that listens for any `brew install` and `brew cask install`. Whenever that happens, a Brewfile is dumped.
