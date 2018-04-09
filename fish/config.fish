@@ -36,7 +36,8 @@ function postexec --on-event fish_postexec
         pushd $DOTFILES
         set files (git diff --name-only)
         if test (count $files) -eq 1; and set -l index (contains -i -- 'Brewfile' $files)
-          git commit -am "Updated Brewfile :beer:"
+          set -q DOTFILES_MSG; or set DOTFILES_MSG 'Updated Brewfile :beer:'
+          git commit -am $DOTFILES_MSG
           git push
         else
           echo "Multiple files have changed, please do a manual commit"

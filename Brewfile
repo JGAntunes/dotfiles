@@ -12,7 +12,7 @@ brew "the_silver_searcher"
 brew "vim", args: ["with-override-system-vi"]
 brew "watchman"
 brew "wget"
-brew 'yarn', args: ['without-node']
+brew "yarn", args: ["without-node"]
 cask "atom"
 cask "flux"
 cask "google-chrome"

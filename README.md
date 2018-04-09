@@ -44,3 +44,4 @@ It will also install vim and neovim plugins, by openeing both editors running  `
 ### Post install
 All the paths should direct you to the dotfiles! There's a `post_exec` function inside the `config.fish`, that listens for any `brew install` and `brew cask install`. Whenever that happens, a Brewfile is dumped.
 After that a check on the git files is done, if the only file changed is the Brewfile, a commit is created and pushed automaticallly (new files are automatically ignored).
+The message will be `Updated Brewfile :beer:`. You can change this by setting `$DOTFILES_MSG` to whatever you want.
