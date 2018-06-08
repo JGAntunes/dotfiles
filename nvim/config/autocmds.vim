@@ -55,3 +55,5 @@ augroup END
 autocmd FileType typescript UltiSnipsAddFiletypes typescript-angular
 autocmd CompleteDone * pclose
 
+" support for tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx

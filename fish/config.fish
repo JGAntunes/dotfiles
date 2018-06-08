@@ -7,15 +7,15 @@ set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
 
 if type "balias" > /dev/null 2>&1;
-    balias g 'git'
-    balias gout 'git checkout'
-    balias glow 'git flow'
-    balias me 'cd ~/playground'
-    balias work 'cd ~/work'
+  balias g 'git'
+  balias gout 'git checkout'
+  balias glow 'git flow'
+  balias me 'cd ~/playground'
+  balias work 'cd ~/work'
 end
 
 # use ag to pipe the results to fzf, ag respects the gitignore
-set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
+set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 set -gx DOTFILES ~/playground/dotfiles
 if test (uname -s) = 'Darwin'
   set -gx PATH /usr/local/homebrew/bin $PATH

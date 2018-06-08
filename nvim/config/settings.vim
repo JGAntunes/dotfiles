@@ -4,22 +4,33 @@ noremap \ ,
 " Stop Vim dying if there's massively long lines.
 set synmaxcol=500
 
+set lazyredraw
+
 " filetype configs
 filetype plugin indent on
 runtime macros/matchit.vim
 
 " colors and aspect
+set termguicolors
 set background=dark
-let g:solarized_termtrans = 1
 " don't show error if there's no theme
-silent! colorscheme solarized
+silent! colorscheme solarized8_high
 
 " visual guideline for 120 characters
 set colorcolumn=120
 
-" highlight current line
-set cursorline
-hi cursorline cterm=none term=none
+if has('nvim')
+  " highlight current line
+  set cursorline
+  hi cursorline cterm=none term=none
+else
+  " revert back to old regex engine
+  set re=1
+
+  set nocursorcolumn
+  set nocursorline
+  syntax sync minlines=256
+end
 
 " keep cursor centered on the screen, 5 lines above and below when possible
 set scrolloff=5

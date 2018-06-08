@@ -36,11 +36,16 @@ let g:prettier#config#bracket_spacing = 'true'
 " ale
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'typescript': ['tslint'],
+\}
+let g:ale_linters = {
+\   'typescript': ['tslint', 'tsserver', 'typecheck'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 'on_save'
+let g:ale_lint_delay = 1000
 
 " Emmet remap
 let g:user_emmet_leader_key='<C-Z>'
