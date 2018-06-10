@@ -1,8 +1,14 @@
 " map uppercase and mixed case 
+:command! W w
+:command! WA wa
+:command! Wa wa
 :command! WQ wq
 :command! Wq wq
-:command! W w
 :command! Q q
+:command! QA qa
+:command! Qa qa
+:command! Up up
+:command! UP up
 
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
@@ -15,3 +21,4 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 :command! DotSettings vsplit $HOME/playground/dotfiles/nvim/config/settings.vim
 
 :command! AleBufferToggleFixers let b:ale_fix_on_save = !get(b:, 'ale_fix_on_save', 1)
+:command! BackgroundColorToggle let &background = ( &background == 'dark'? 'light' : 'dark' )

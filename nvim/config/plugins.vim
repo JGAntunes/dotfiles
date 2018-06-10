@@ -23,16 +23,6 @@ let g:mta_filetypes = {
   \ 'xml' : 1
 \}
 
-" Prettier
-let g:prettier#autoformat = 0
-let g:prettier#enabled = 1
-let g:prettier#config#bracket_spacing = 'true'
-
-" neomake
-" let g:neomake_open_list = 2
-" let g:neomake_list_height = 10
-" let g:neomake_javascript_enabled_makers = ['eslint', 'stylelint']
-
 " ale
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
