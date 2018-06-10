@@ -63,17 +63,20 @@ My settings for n?vim are split in multiple files, the name of the files are sel
 
 My `<leader>` is the `,`
 
-There are a couple of commands that helps editing these files whenever you want, all of them will be "vsplitted":
-* `:DotAutoCmds` - link
-* `:DotCommands`
-* `:DotKeymaps`
-* `:DotKeymapsNvim`
-* `:DotPlugins` - plugin configuration
-* `:DotSettings`
-
-There's also a keybinding `<leader>ev`, this will vsplit `init.vim`
-
 Command utils:
 * `AleBufferToggleFixers` - disable ale fixers for the current buffer
 * `BackgroundColorToggle` - toggle between dark and light background
 * `W` `WA` `Wa` `WQ` `Wq` `Q` `QA` `Qa` `UP` `Up` `X` remapped different saving/exit commands to different cases
+
+There's two keybindings related to `init.vim`:
+* `<leader>ev` - this will vsplit `init.vim`
+* `<leader>sv` - this will source `init.vim`
+
+As for the other files there are a couple of commands that helps editing them whenever you want:
+* `:DotAutoCmds` - `:vsplit` [Auto Commands](nvim/config/autocmds.vim)
+* `:DotCommands` - `:vsplit` [Commands](nvim/config/commands.vim)
+* `:DotKeymaps` - `:vsplit` [Keymaps](nvim/config/keymaps.vim)
+* `:DotKeymapsNvim` - `:vsplit` [Keymaps for neovim only](nvim/config/keymaps-nvim.vim)
+* `:DotPlugins` - `:vsplit` [Plugins only configs](nvim/config/plugins.vim)
+* `:DotSettings` - `:vsplit` [General settings](nvim/config/settings.vim)
+
