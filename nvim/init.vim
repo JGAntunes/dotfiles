@@ -12,8 +12,9 @@ Plug 'tpope/vim-git'
 Plug 'dag/vim-fish'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'moll/vim-node'
-Plug 'leafgarland/typescript-vim'
 Plug 'othree/html5.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
@@ -23,7 +24,7 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
 Plug 'ap/vim-css-color'
 Plug 'styled-components/vim-styled-components'
 
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -77,6 +78,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 " easily surround sutff with tags, brackets, quotes, etc
 Plug 'tpope/vim-surround'
+" auto close parent tag under cursor
+Plug 'docunext/closetag.vim'
 
 " tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -84,6 +87,7 @@ Plug 'christoomey/vim-tmux-runner'
 
 " themes and status bar
 Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -98,4 +102,3 @@ source ~/playground/dotfiles/nvim/config/keymaps.vim
 if has('nvim')
   source ~/playground/dotfiles/nvim/config/keymaps-nvim.vim
 end
-

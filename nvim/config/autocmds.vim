@@ -42,16 +42,9 @@ augroup qf
   autocmd QuitPre * if &filetype != 'qf' | silent! lclose | endif
 augroup END
 
-" neomake
-autocmd Filetype javascript let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
-autocmd Filetype javascript let g:neomake_javascript_stylelint_exe = nrun#Which('stylelint')
-autocmd! BufWritePost *.js Neomake
-
-
-" prettier
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql if prettier#enabled | PrettierAsync | endif
-
 " UltiSnips
 autocmd FileType typescript UltiSnipsAddFiletypes typescript-angular
 autocmd CompleteDone * pclose
 
+" support for tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx

@@ -44,10 +44,11 @@ vnoremap <leader>8 "*y
 vnoremap <leader>9 "*p
 nnoremap <leader>8 "*p
 
-" neomake
-nnoremap <leader><leader>b :ll<CR>         " go to current error/warning
-nnoremap <leader><leader>m :lnext<CR>      " next error/warning
-nnoremap <leader><leader>n :lprev<CR>      " previous error/warning
+" ale
+nmap <silent> <leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <leader>j <Plug>(ale_next_wrap)
+nmap <silent> <leader>tb <Plug>(ale_go_to_definition_in_tab)
+nmap <silent> <leader>td <Plug>(ale_go_to_definition)
 
 
 " toggle folds with space
@@ -90,7 +91,7 @@ function! s:make_path(path)
     endif
   endif
 
-  return substitute(relPath, '\(\(\/index\)\?\(\.ts\|\.js\)\)\?\n\+$', '', '')
+  return substitute(relPath, '\(\(\/index\)\?\(\.tsx\?\|\.jsx\?\)\)\?\n\+$', '', '')
 endfunction
 
 inoremap <expr> <c-o><c-p> fzf#complete(fzf#wrap({

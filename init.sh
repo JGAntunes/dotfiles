@@ -1,7 +1,16 @@
 #!/bin/bash
 
-fish_path=/usr/local/homebrew/bin/fish
-brew_path=/usr/local/homebrew/bin/brew
+if [[ $EUID -eq 0 ]]; then
+    error "This script should not be run using sudo or as the root user"
+    exit 1
+fi
+
+if [ "$(uname)" == "Darwin" ]; then
+  fish_path=/usr/local/homebrew/bin/fish
+  brew_path=/usr/local/homebrew/bin/brew
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  fish_path=/usr/bin/fish
+fi
 
 config_git () {
   echo "git user name:"
@@ -21,15 +30,20 @@ install_brew () {
 
 install_from_brewfile () {
   $brew_path update --force
-  echo "Installing brew dependencies, it will take a while. Time for a ☕️"
+  echo "Installing brew dependencies, it will take 💩💩💩 loads of time. Time for a ☕️"
   $brew_path bundle --verbose --force
   # install python support for neovim
   pip3 install --user neovim
 }
 
 set_fish_shell () {
-  echo $fish_path | sudo tee -a /etc/shells
-  chsh -s $fish_path
+  if type $fish_path > /dev/null; then
+    echo $fish_path | sudo tee -a /etc/shells
+    sudo chsh -s $fish_path
+
+    # start yolo.fish
+    $fish_path yolo.fish
+  fi
 }
 
 install_powerfonts () {
@@ -44,25 +58,19 @@ install_powerfonts () {
 
 install_nvm () {
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+  # manually source nvm
   \. "$HOME/.nvm/nvm.sh"
   nvm install --lts
 }
 
-start_yolo_fish () {
-  $fish_path yolo.fish
-}
-
-if [[ $EUID -eq 0 ]]; then
-    error "This script should not be run using sudo or as the root user"
-    exit 1
-fi
-
 config_git
 install_nvm
-install_brew
-install_from_brewfile
-set_fish_shell
-
 install_powerfonts
+if [ "$(uname)" == "Darwin" ]; then
+  touch ~/.hushlogin
+  install_brew
+  install_from_brewfile
+fi
+
+set_fish_shell
 start_yolo_fish
-touch ~/.hushlogin

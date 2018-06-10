@@ -38,10 +38,45 @@ After that it will install:
 * node global packages `eslint stylelint tern`
 
 
-It will also install vim and neovim plugins, by openeing both editors running  `n?vim +PlugInstall +qall`
+It will also install vim and neovim plugins, by opening both editors running  `n?vim +PlugInstall +qall`
+
+#### Args
+By default `yolo.fish` runs all the commands and ignores any existing symlinks in place. Sometimes it's useful to just rerun the symlink recreation, or just reinstall n?vim Plugins.
+`yolo.fish` accepts multiple args to just run parts of the script:
+* `-f/--force` - it will overwrite existing symlinks
+
+The next args allows you to run the script in a granular way, feel free to combine multiple args
+* `-n/--node` - install global packages.
+* `-m/--fisherman` - install fisherman and it's plugins.
+* `-s/--symlink` - create symlinks, this options will ignore already created symlinks. Combine with the `-f/--force`
+* `-v/--vimplug` - install vim and nvim Plugins.
+
 
 
 ### Post install
 All the paths should direct you to the dotfiles! There's a `post_exec` function inside the `config.fish`, that listens for any `brew install` and `brew cask install`. Whenever that happens, a Brewfile is dumped.
+After that a check on the git files is done, if the only file changed is the Brewfile, a commit is created and pushed automatically (new files are automatically ignored).
+The message will be `Updated Brewfile :beer:`. You can change this by setting `$DOTFILES_MSG` to whatever you want.
 
-From time to time make sure you commit that :shit: and push it!
+#N?VIM
+My settings for n?vim are split in multiple files, the name of the files are self explanatory.
+
+My `<leader>` is the `,`
+
+Command utils:
+* `AleBufferToggleFixers` - disable ale fixers for the current buffer
+* `BackgroundColorToggle` - toggle between dark and light background
+* `W` `WA` `Wa` `WQ` `Wq` `Q` `QA` `Qa` `UP` `Up` `X` remapped different saving/exit commands to different cases
+
+There's two keybindings related to `init.vim`:
+* `<leader>ev` - this will vsplit `init.vim`
+* `<leader>sv` - this will source `init.vim`
+
+As for the other files there are a couple of commands that helps editing them whenever you want:
+* `:DotAutoCmds` - `:vsplit` [Auto Commands](nvim/config/autocmds.vim)
+* `:DotCommands` - `:vsplit` [Commands](nvim/config/commands.vim)
+* `:DotKeymaps` - `:vsplit` [Keymaps](nvim/config/keymaps.vim)
+* `:DotKeymapsNvim` - `:vsplit` [Keymaps for neovim only](nvim/config/keymaps-nvim.vim)
+* `:DotPlugins` - `:vsplit` [Plugins only configs](nvim/config/plugins.vim)
+* `:DotSettings` - `:vsplit` [General settings](nvim/config/settings.vim)
+
