@@ -13,6 +13,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 config_git () {
+  # although this file doesn't exist, yet, git doesn't seem to be bothered by that
+  git config --global core.excludesfile ~/.gitignore_global
   echo "git user name:"
   read username
   echo "git email:"

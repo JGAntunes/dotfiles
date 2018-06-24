@@ -12,7 +12,11 @@ runtime macros/matchit.vim
 
 " colors and aspect
 set termguicolors
-set background=dark
+if $color_scheme
+  set background=dark
+else
+  set background=light
+end
 " don't show error if there's no theme
 silent! colorscheme solarized8_high
 
