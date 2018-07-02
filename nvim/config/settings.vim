@@ -2,7 +2,7 @@ let mapleader=","
 noremap \ ,
 
 " Stop Vim dying if there's massively long lines.
-set synmaxcol=500
+set synmaxcol=128
 
 set lazyredraw
 
@@ -12,7 +12,11 @@ runtime macros/matchit.vim
 
 " colors and aspect
 set termguicolors
-set background=dark
+if $color_scheme
+  set background=dark
+else
+  set background=light
+end
 " don't show error if there's no theme
 silent! colorscheme solarized8_high
 
@@ -24,9 +28,6 @@ if has('nvim')
   set cursorline
   hi cursorline cterm=none term=none
 else
-  " revert back to old regex engine
-  set re=1
-
   set nocursorcolumn
   set nocursorline
   syntax sync minlines=256
@@ -34,6 +35,9 @@ end
 
 " keep cursor centered on the screen, 5 lines above and below when possible
 set scrolloff=5
+
+" faster redraw
+set ttyfast
 
 " show tabs and trailing spaces
 set list listchars=tab:»·,trail:·
@@ -72,10 +76,11 @@ syntax spell toplevel
 set incsearch
 set hlsearch
 
-" Undo changes, even when file was closed
+" No backup and swap files
 set nobackup
 set nowritebackup
 set noswapfile
+" Undo changes, even when file was closed
 if !&diff
   set undodir=~/.vim/undodir
   set undofile
@@ -94,10 +99,10 @@ set foldlevel=99999
 
 " line numbers configs
 set number
-set relativenumber
 
-" placement of the new window, vertical split
+" placement of the new pane
 set splitbelow
+set splitright
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim/
 set grepprg=ag\ --nogroup\ --nocolor

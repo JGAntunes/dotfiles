@@ -49,6 +49,7 @@ nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
 nmap <silent> <leader>tb <Plug>(ale_go_to_definition_in_tab)
 nmap <silent> <leader>td <Plug>(ale_go_to_definition)
+nmap <silent> <leader>tr <Plug>(ale_find_references)
 
 
 " toggle folds with space

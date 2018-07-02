@@ -29,6 +29,7 @@ let g:ale_fixers = {
 \   'typescript': ['tslint'],
 \}
 let g:ale_linters = {
+\   'javascript': ['eslint'],
 \   'typescript': ['tslint', 'tsserver', 'typecheck'],
 \}
 let g:ale_fix_on_save = 1

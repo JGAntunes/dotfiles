@@ -1,3 +1,7 @@
+# misc vars
+set -gx DOTFILES ~/playground/dotfiles
+set -gx color_scheme 1
+
 # theme configs
 set -gx theme_display_git_untracked yes
 set -gx theme_display_user no
@@ -16,7 +20,6 @@ end
 
 # use ag to pipe the results to fzf, ag respects the gitignore
 set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
-set -gx DOTFILES ~/playground/dotfiles
 if test (uname -s) = 'Darwin'
   set -gx PATH /usr/local/homebrew/bin $PATH
 end
