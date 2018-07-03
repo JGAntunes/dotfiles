@@ -43,8 +43,8 @@ set_fish_shell () {
     echo $fish_path | sudo tee -a /etc/shells
     sudo chsh -s $fish_path
 
-    # start yolo.fish
-    $fish_path yolo.fish
+    # start init.fish
+    $fish_path init.fish
   fi
 }
 
