@@ -8,7 +8,7 @@
 
 ## Installation
 #### Clone this repo
-First step, clone this repo, because I'm lazy and this is my dotfiles, they need to be placed in ~/playground/dotfiles
+First step, clone this repo, because I'm lazy and this are my dotfiles, they need to be placed in `~/playground/dotfiles`
 
 ``` bash
 $ git clone https://github.com/FabioAntunes/dotfiles.git ~/playground/dotfiles
