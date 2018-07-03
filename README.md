@@ -34,11 +34,12 @@ After running both the `init.sh` and `init.fish` there will be a couple function
 
 #### yolo
 This is the main function that allows us run all the commands related to dotfiles, it has autocompletion enabled just type `yolo -` and press tab.
-If no args are passed to the `yolo` functions, all the options will be executed in this order:
-1 - create symlinks, any existing symlinks will be preserved. 
-2 - install fisherman
-3 - install vim plug Plugins
-4 - install global npm packages 
+If no args are passed to the `yolo` function, all the options will be executed in this order:
+
+1. create symlinks, any existing symlinks will be preserved. 
+2. install fisherman
+3. install vim plug Plugins
+4. install global npm packages 
 
 If we use the `-f/--force` it will run all the options above, but won't preserve any symlinks
 
