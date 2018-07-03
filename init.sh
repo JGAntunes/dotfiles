@@ -75,4 +75,3 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 set_fish_shell
-start_yolo_fish
