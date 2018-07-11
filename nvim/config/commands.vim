@@ -22,4 +22,4 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 
 :command! AleBufferToggleFixers let b:ale_fix_on_save = !get(b:, 'ale_fix_on_save', 1)
 :command! ToggleBackgroundColor let &background = ( &background == 'dark'? 'light' : 'dark' )
-:command! ToggleJsSettings call system('date')
+:command! ToggleJsConfigs call system('toggle-js-configs')

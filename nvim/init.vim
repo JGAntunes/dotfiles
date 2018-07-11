@@ -65,7 +65,7 @@ Plug 'jordwalke/VimAutoMakeDirectory'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " searches for local vimrc files and loads them, useful for extra config for a specfic project
-Plug 'thinca/vim-localrc'
+Plug 'embear/vim-localvimrc'
 " searches for the current selection, rather than the current word
 Plug 'thinca/vim-visualstar'
 " toggles comments
