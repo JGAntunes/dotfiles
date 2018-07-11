@@ -11,6 +11,8 @@ brew "neovim"
 brew "python"
 brew "the_silver_searcher"
 brew "tmux"
+brew "tree"
+brew "unrar"
 brew "vim", args: ["with-override-system-vi"]
 brew "watchman"
 brew "wget"
