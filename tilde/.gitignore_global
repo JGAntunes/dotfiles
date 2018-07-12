@@ -43,3 +43,5 @@ Thumbs.db
 node_modules/
 .tern-port
 **/.tern-port
+.lvimrc
+**/.lvimrc
