@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+
+set changed_files (git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)
+
+if contains 'Brewfile' $changed_files
+ brew bundle --global
+end
+

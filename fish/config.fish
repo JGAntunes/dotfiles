@@ -21,6 +21,7 @@ end
 # use ag to pipe the results to fzf, ag respects the gitignore
 set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 if test (uname -s) = 'Darwin'
+  set -gx IS_OSX 1
   set -gx PATH /usr/local/homebrew/bin $PATH
 end
 if test -d ~/platform-tools
@@ -29,10 +30,9 @@ end
 
 
 function postexec --on-event fish_postexec
-  if test (count $argv) -ge 1
-    if string match -q -- "brew install*" $argv; or string match -q -- "brew cask install*" $argv
-      set file (string join '' $DOTFILES '/Brewfile')
-      brew bundle dump --force --file=$file
+  if test (count $argv) -ge 1; and test $IS_OSX -eq 1
+    if string match -q -- "*brew install*" $argv; or string match -q -- "*brew cask install*" $argv
+      brew bundle dump --force --global
 
       read -l -P 'Commit Brewfile? [y/N] ' confirm
       if test $confirm = 'Y' -o $confirm = 'y' -o $confirm = 'yes';
