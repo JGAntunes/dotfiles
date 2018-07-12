@@ -1,6 +1,12 @@
 set nocompatible
 set encoding=utf8
 
+" temporary fix
+" https://github.com/vim/vim/issues/3117
+if has('python3')
+  silent! python3 1
+endif
+
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
 else
