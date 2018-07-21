@@ -1,9 +1,11 @@
 function yolo -d "All your dotfiles are belong to us"
+  set -gx flags $argv
   set -l options (fish_opt --short=f --long=force)
   set -l options $options (fish_opt --short=n --long=node)
   set -l options $options (fish_opt --short=m --long=fisherman)
   set -l options $options (fish_opt --short=s --long=symlink)
   set -l options $options (fish_opt --short=v --long=vimplug)
+  set -l options $options (fish_opt --short=c --long=copy)
   argparse $options -- $argv
 
   set -gx keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh' 'tilde'
@@ -41,6 +43,16 @@ function yolo -d "All your dotfiles are belong to us"
     # install Plugins for vim and neovim
     vim +PlugInstall +qall
     nvim +PlugInstall +qall
+  end
+
+  function copy_files
+    set origin  $dir/consolas-powerline/*.ttf
+    set dest ~/Library/Fonts/
+    if test $has_force -ge 1
+      cp -f $origin $dest
+    else
+      cp $origin $dest
+    end
   end
 
   function create_symlink
@@ -127,25 +139,31 @@ function yolo -d "All your dotfiles are belong to us"
 
   function test_args --no-scope-shadowing
     set has_no_args 0
-    if test -n "$_flag_m"; or test -n "$_flag_v"; or test -n "$_flag_n"; or test -n "$_flag_s";
+
+    if test (count $flags) -eq 1; and test $has_force -ge 1
       set has_no_args 1
     end
 
-    if test -n "$_flag_s"; or test $has_no_args -eq 0
+    if test -n "$_flag_s"; or test $has_no_args -eq 1
       create_symlinks
     end
 
-    if test -n "$_flag_m"; or test $has_no_args -eq 0
+    if test -n "$_flag_m"; or test $has_no_args -eq 1
       install_fisherman
     end
 
-    if test -n "$_flag_v"; or test $has_no_args -eq 0
+    if test -n "$_flag_v"; or test $has_no_args -eq 1
       install_vim_plug
     end
 
-    if test -n "$_flag_n"; or test $has_no_args -eq 0
+    if test -n "$_flag_n"; or test $has_no_args -eq 1
       install_node_packages
     end
+
+    if test -n "$_flag_c"; or test $has_no_args -eq 1
+      copy_files
+    end
+
   end
 
   test_args
