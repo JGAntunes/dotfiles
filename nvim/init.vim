@@ -92,6 +92,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 
 " themes and status bar
+Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
@@ -100,11 +101,16 @@ call plug#end()
 
 
 " load configs
+source ~/playground/dotfiles/nvim/config/settings.vim
 source ~/playground/dotfiles/nvim/config/autocmds.vim
 source ~/playground/dotfiles/nvim/config/commands.vim
 source ~/playground/dotfiles/nvim/config/plugins.vim
-source ~/playground/dotfiles/nvim/config/settings.vim
 source ~/playground/dotfiles/nvim/config/keymaps.vim
 if has('nvim')
   source ~/playground/dotfiles/nvim/config/keymaps-nvim.vim
 end
+
+let coloursettings = '~/playground/dotfiles/nvim/config/colours/'.g:colors_name.'.vim'
+if !empty(glob(coloursettings))
+  execute 'source '.coloursettings
+endif

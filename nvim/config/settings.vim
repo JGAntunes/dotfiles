@@ -18,7 +18,7 @@ else
   set background=light
 end
 " don't show error if there's no theme
-silent! colorscheme solarized8_high
+silent! colorscheme base16-solarflare
 
 " visual guideline for 120 characters
 set colorcolumn=120

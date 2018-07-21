@@ -37,6 +37,9 @@ let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 'on_save'
 let g:ale_lint_delay = 1000
+let g:ale_lint_on_enter = 0 " don't lint when we open a file
+let g:ale_sign_error = '✖' " looks nicer than the default >>
+let g:ale_sign_warning = '⚑'
 
 " Emmet remap
 let g:user_emmet_leader_key='<C-Z>'
