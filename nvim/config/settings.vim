@@ -1,3 +1,7 @@
+"
+" General settings
+"
+
 let mapleader=","
 noremap \ ,
 
@@ -9,29 +13,6 @@ set lazyredraw
 " filetype configs
 filetype plugin indent on
 runtime macros/matchit.vim
-
-" colors and aspect
-set termguicolors
-if $color_scheme
-  set background=dark
-else
-  set background=light
-end
-" don't show error if there's no theme
-silent! colorscheme base16-solarflare
-
-" visual guideline for 120 characters
-set colorcolumn=120
-
-if has('nvim')
-  " highlight current line
-  set cursorline
-  hi cursorline cterm=none term=none
-else
-  set nocursorcolumn
-  set nocursorline
-  syntax sync minlines=256
-end
 
 " keep cursor centered on the screen, 5 lines above and below when possible
 set scrolloff=5

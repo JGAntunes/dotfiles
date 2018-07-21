@@ -1,3 +1,7 @@
+"
+" Keymaps
+"
+
 " clear highlights by hitting ESC
 " or by hitting enter in normal mode
 nnoremap <esc> :noh<return><esc>
@@ -99,3 +103,14 @@ inoremap <expr> <c-o><c-p> fzf#complete(fzf#wrap({
   \ 'source':  'ag -g ""',
   \ 'reducer': function('<sid>make_path')}))
 
+if has('nvim')
+  " neovim terminal configs
+  :tnoremap <A-h> <C-\><C-n><C-w>h
+  :tnoremap <A-j> <C-\><C-n><C-w>j
+  :tnoremap <A-k> <C-\><C-n><C-w>k
+  :tnoremap <A-l> <C-\><C-n><C-w>l
+  :nnoremap <A-h> <C-w>h
+  :nnoremap <A-j> <C-w>j
+  :nnoremap <A-k> <C-w>k
+  :nnoremap <A-l> <C-w>l
+endif

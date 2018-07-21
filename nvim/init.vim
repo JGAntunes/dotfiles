@@ -101,16 +101,16 @@ call plug#end()
 
 
 " load configs
+source ~/playground/dotfiles/nvim/config/visuals.vim
 source ~/playground/dotfiles/nvim/config/settings.vim
 source ~/playground/dotfiles/nvim/config/autocmds.vim
 source ~/playground/dotfiles/nvim/config/commands.vim
 source ~/playground/dotfiles/nvim/config/plugins.vim
 source ~/playground/dotfiles/nvim/config/keymaps.vim
-if has('nvim')
-  source ~/playground/dotfiles/nvim/config/keymaps-nvim.vim
-end
 
-let coloursettings = '~/playground/dotfiles/nvim/config/colours/'.g:colors_name.'.vim'
-if !empty(glob(coloursettings))
-  execute 'source '.coloursettings
+if exists('g:colors_name')
+  let coloursettings = '~/playground/dotfiles/nvim/config/colours/'.g:colors_name.'.vim'
+  if !empty(glob(coloursettings))
+    execute 'source '.coloursettings
+  endif
 endif

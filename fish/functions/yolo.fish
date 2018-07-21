@@ -48,6 +48,7 @@ function yolo -d "All your dotfiles are belong to us"
   function copy_files
     set origin  $dir/consolas-powerline/*.ttf
     set dest ~/Library/Fonts/
+
     if test $has_force -ge 1
       cp -f $origin $dest
     else

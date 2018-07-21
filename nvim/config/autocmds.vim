@@ -1,3 +1,7 @@
+"
+" Auto commands
+"
+
 " highlight current line
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
@@ -11,10 +15,6 @@ autocmd BufNewFile,BufRead .babelrc,.eslintrc,.stylelintrc setlocal filetype=jso
 " markdown
 autocmd FileType markdown setlocal shiftwidth=4 softtabstop=4 tabstop=4 wrap linebreak nolist wrap lbr colorcolumn=0 synmaxcol=999999
 
-" https://alexpearce.me/2014/05/italics-in-iterm2-vim-tmux/
-" has to go after all  declarations
-highlight Comment cterm=italic
-autocmd FileType javascript highlight xmlAttrib cterm=italic
 
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
