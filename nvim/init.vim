@@ -32,12 +32,6 @@ Plug 'styled-components/vim-styled-components'
 
 Plug 'w0rp/ale'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
-" checks for local node packages, defaults to global useful for eslint, etc
-Plug 'jaawerth/nrun.vim'
-
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -93,8 +87,6 @@ Plug 'christoomey/vim-tmux-runner'
 
 " themes and status bar
 Plug 'chriskempson/base16-vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
