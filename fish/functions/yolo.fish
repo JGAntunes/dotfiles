@@ -141,7 +141,7 @@ function yolo -d "All your dotfiles are belong to us"
   function test_args --no-scope-shadowing
     set has_no_args 0
 
-    if test (count $flags) -eq 1; and test $has_force -ge 1
+    if test $has_force -ge 1; and begin; test $flags = '-f'; or test $flags = '--force'; end
       set has_no_args 1
     end
 
