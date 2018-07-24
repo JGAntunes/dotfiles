@@ -2,10 +2,6 @@
 " Auto commands
 "
 
-" highlight current line
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
