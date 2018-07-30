@@ -6,7 +6,7 @@ set -gx color_scheme 1
 set -gx theme_display_git_untracked yes
 set -gx theme_display_user no
 set -gx theme_display_git yes
-set -gx theme_color_scheme solarized
+set -gx theme_color_scheme terminal
 set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
 
@@ -49,4 +49,9 @@ function postexec --on-event fish_postexec
       end
     end
   end
+end
+
+if status --is-interactive
+    set BASE16_SHELL "$DOTFILES/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
 end

@@ -1,12 +1,14 @@
 " colors and aspect
 set termguicolors
-if $color_scheme
-  set background=dark
-else
-  set background=light
-end
-" don't show error if there's no theme
-silent! colorscheme base16-solarflare
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+" TODO find a way to adapt the background based on the base16 theme
+set background=dark
+
 
 " make comments italic https://stackoverflow.com/a/30937851/1449157
 let &t_ZH="\e[3m"

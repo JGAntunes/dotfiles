@@ -11,8 +11,10 @@
 First step, clone this repo, because I'm lazy and this are my dotfiles, they need to be placed in `~/playground/dotfiles`
 
 ``` bash
-$ git clone https://github.com/FabioAntunes/dotfiles.git ~/playground/dotfiles
+$ git clone https://github.com/FabioAntunes/dotfiles.git ~/playground/dotfiles --recurse-submodules
 ```
+
+Oh btw I'm using some git submodules.
 
 ### Run the init script
 
@@ -100,5 +102,6 @@ As for the other files there are a couple of commands that helps editing them wh
 * `:DotKeymapsNvim` - `:vsplit` [Keymaps for neovim only](nvim/config/keymaps-nvim.vim)
 * `:DotPlugins` - `:vsplit` [Plugins only configs](nvim/config/plugins.vim)
 * `:DotSettings` - `:vsplit` [General settings](nvim/config/settings.vim)
+* `:DotVisuals` - `:vsplit` [Visual settings](nvim/config/visuals.vim)
 
 

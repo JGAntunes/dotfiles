@@ -1,3 +1,6 @@
 [submodule "consolas-powerline"]
 	path = consolas-powerline
 	url = https://github.com/Znuff/consolas-powerline.git
+[submodule "base16-shell"]
+	path = base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
