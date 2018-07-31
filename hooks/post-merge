@@ -7,6 +7,6 @@ if contains 'Brewfile' $changed_files
 end
 
 if contains '.gitmodules' $changed_files
-  git submodule update --remote
+  git submodule update --init --recursive
 end
 
