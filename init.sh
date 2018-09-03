@@ -8,6 +8,8 @@ fi
 if [ "$(uname)" == "Darwin" ]; then
   fish_path=/usr/local/homebrew/bin/fish
   brew_path=/usr/local/homebrew/bin/brew
+  defaults write -g InitialKeyRepeat -int 10
+  defaults write -g KeyRepeat -int 2
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   fish_path=/usr/bin/fish
 fi
