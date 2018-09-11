@@ -16,7 +16,6 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : 
 :command! DotAutoCmds vsplit $HOME/playground/dotfiles/nvim/config/autocmds.vim
 :command! DotCommands vsplit $HOME/playground/dotfiles/nvim/config/commands.vim
 :command! DotKeymaps vsplit $HOME/playground/dotfiles/nvim/config/keymaps.vim
-:command! DotKeymapsNvim vsplit $HOME/playground/dotfiles/nvim/config/keymaps-nvim.vim
 :command! DotPlugins vsplit $HOME/playground/dotfiles/nvim/config/plugins.vim
 :command! DotSettings vsplit $HOME/playground/dotfiles/nvim/config/settings.vim
 :command! DotVisuals vsplit $HOME/playground/dotfiles/nvim/config/visuals.vim
