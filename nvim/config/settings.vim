@@ -74,9 +74,8 @@ set backspace=indent,eol,start
 set wildmenu
 set wildmode=full
 
-" fold based on syntax
-set foldmethod=syntax
-set foldlevel=99999
+" disable fold, I don't use and is very slow
+set foldmethod=manual
 
 " line numbers configs
 set number
