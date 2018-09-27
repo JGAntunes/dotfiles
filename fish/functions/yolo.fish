@@ -9,7 +9,7 @@ function yolo -d "All your dotfiles are belong to us"
   argparse $options -- $argv
 
   set -gx keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh' 'tilde'
-  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Preferences ~/.ssh ~
+  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Application\ Support/iTerm2/DynamicProfiles ~/.ssh ~
   set -e symlinks
   set -gx symlinks
   set -gx symlinks_error
