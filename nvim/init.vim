@@ -77,8 +77,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 " easily surround sutff with tags, brackets, quotes, etc
 Plug 'tpope/vim-surround'
-" auto close parent tag under cursor
-Plug 'docunext/closetag.vim'
 
 " tmux
 Plug 'christoomey/vim-tmux-navigator'
