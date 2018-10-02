@@ -28,6 +28,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
 Plug 'ap/vim-css-color'
 Plug 'styled-components/vim-styled-components'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 Plug 'w0rp/ale'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
@@ -43,8 +45,6 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install --global tern' }
 
 " Run async stuff
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" autoclose tags
-Plug 'alvan/vim-closetag'
 " emmet support
 Plug 'mattn/emmet-vim'
 " enhanced quickfix window

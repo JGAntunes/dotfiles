@@ -24,6 +24,10 @@ config_git () {
 
   git config --global user.name $username
   git config --global user.email $email
+
+  # set path for hooks in the dotfiles
+  git config core.hooksPath hooks
+  chmod +x hooks/post-merge
 }
 
 install_brew () {

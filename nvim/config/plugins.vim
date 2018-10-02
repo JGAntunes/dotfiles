@@ -75,3 +75,7 @@ let g:qf_loclist_window_bottom = 0
 let g:qf_auto_resize = 0
 let g:qf_nowrap = 0
 
+" splitjoin
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+

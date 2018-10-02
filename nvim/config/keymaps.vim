@@ -2,31 +2,29 @@
 " Keymaps
 "
 
-" clear highlights by hitting ESC
-" or by hitting enter in normal mode
-nnoremap <esc> :noh<return><esc>
-nnoremap <CR> :noh<CR><CR>
+" clear highlights by hitting ctrl /
+nnoremap \ :noh<CR>
 
 " Save file using sudo, if we don't have permissions
 cnoremap w!! w !sudo tee %
 
 " open terminal mode vertical split with 10 lines
-nnoremap <leader>t :10split +te<cr>
+nnoremap <Leader>t :10split +te<CR>
 
 " new file in current directory
 map <Leader>nf :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " toggle spellcheck
-map <leader>sc :setlocal spell!<CR>
+map <Leader>sc :setlocal spell!<CR>
 
 " when pasting, set paste mode first, then paste, then set paste mode off
 inoremap <C-v> <F10><C-r>+<F10>
 
 " shortcut split vertically 
-map <leader>v :vsplit<CR>
+map <Leader>v :vsplit<CR>
 
 " clean up any trailing whitespace
-nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
+nnoremap <Leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 
 " stolen from https://bitbucket.org/sjl/dotfiles/src/tip/vim/vimrc
 " Keep search matches in the middle of the window.
@@ -44,16 +42,16 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " make copy/paste from system clip easier
-vnoremap <leader>8 "*y
-vnoremap <leader>9 "*p
-nnoremap <leader>8 "*p
+vnoremap <Leader>8 "*y
+vnoremap <Leader>9 "*p
+nnoremap <Leader>8 "*p
 
 " ale
-nmap <silent> <leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <leader>j <Plug>(ale_next_wrap)
-nmap <silent> <leader>tb <Plug>(ale_go_to_definition_in_tab)
-nmap <silent> <leader>td <Plug>(ale_go_to_definition)
-nmap <silent> <leader>tr <Plug>(ale_find_references)
+nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+nmap <silent> <Leader>tb <Plug>(ale_go_to_definition_in_tab)
+nmap <silent> <Leader>td <Plug>(ale_go_to_definition)
+nmap <silent> <Leader>tr <Plug>(ale_find_references)
 
 
 " toggle folds with space
@@ -63,25 +61,29 @@ vnoremap <Space> zf
 autocmd BufWinEnter * silent! :%foldopen!
 
 " Edit my init.vim and source my edit.vim
-:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-:nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <Leader>sv :source $MYVIMRC<cr>
 
 " FZF.vim
-nnoremap <leader>p :Files<cr>
-nnoremap <leader>f :Ag<cr>
-nnoremap <leader>b :Buffers<cr>
+nnoremap <Leader>p :Files<cr>
+nnoremap <Leader>f :Ag<cr>
+nnoremap <Leader>b :Buffers<cr>
 
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+nmap <Leader><tab> <plug>(fzf-maps-n)
+xmap <Leader><tab> <plug>(fzf-maps-x)
+omap <Leader><tab> <plug>(fzf-maps-o)
 
-" autoclose tag
+" autoclose tag with omnifunc
 iabbrev </ </<C-X><C-O>
 
 " Insert mode completion
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" splitjoin
+nmap <Leader>j :SplitjoinJoin<cr>
+nmap <Leader>s :SplitjoinSplit<cr>
 
 " using fzf to search for a file and generate a relative path, relative to
 " current buffer

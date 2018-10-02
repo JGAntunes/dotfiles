@@ -8,10 +8,6 @@ autocmd VimResized * :wincmd =
 " set json syntax to rc files
 autocmd BufNewFile,BufRead .babelrc,.eslintrc,.stylelintrc setlocal filetype=json
 
-" markdown
-autocmd FileType markdown setlocal shiftwidth=4 softtabstop=4 tabstop=4 wrap linebreak nolist wrap lbr colorcolumn=0 synmaxcol=999999
-
-
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 
@@ -26,7 +22,6 @@ augroup qf
 augroup END
 
 " UltiSnips
-autocmd FileType typescript UltiSnipsAddFiletypes typescript-angular
 autocmd CompleteDone * pclose
 
 " support for tsx
