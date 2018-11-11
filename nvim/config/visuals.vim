@@ -6,10 +6,6 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-" TODO find a way to adapt the background based on the base16 theme
-set background=dark
-
-
 " make comments italic https://stackoverflow.com/a/30937851/1449157
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"

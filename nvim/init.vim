@@ -13,27 +13,30 @@ else
 endif
 
 " Syntax
-Plug 'tpope/vim-git'
-Plug 'dag/vim-fish'
+" Javascript, Node and React
+Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'moll/vim-node'
-Plug 'othree/html5.vim'
-Plug 'elzr/vim-json'
-Plug 'fatih/vim-go'
+Plug 'styled-components/vim-styled-components', {'for': ['javascript', 'javascript.jsx']}
+" css and scss
 Plug 'JulesWang/css.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
 Plug 'ap/vim-css-color'
-Plug 'styled-components/vim-styled-components'
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
+" html
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-git'
+Plug 'dag/vim-fish'
+Plug 'elzr/vim-json'
+Plug 'fatih/vim-go', { 'for': ['go'] }
+" pandoc and markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
+" linter
 Plug 'w0rp/ale'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
 
+" deoplete for nvim and vim
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -41,6 +44,9 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+" tern
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install --global tern' }
 
 " Run async stuff
