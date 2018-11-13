@@ -8,8 +8,8 @@ function yolo -d "All your dotfiles are belong to us"
   set -l options $options (fish_opt --short=c --long=copy)
   argparse $options -- $argv
 
-  set -gx keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh' 'tilde'
-  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Application\ Support/iTerm2/DynamicProfiles ~/.ssh ~
+  set -gx keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh' 'tilde' 'yamllint'
+  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Application\ Support/iTerm2/DynamicProfiles ~/.ssh ~ ~/.config/yamllint
   set -e symlinks
   set -gx symlinks
   set -gx symlinks_error

@@ -1,0 +1,4 @@
+extends: default
+rules:
+  indentation:
+    indent-sequences: consistent
