@@ -31,22 +31,26 @@ end
 
 function postexec --on-event fish_postexec
   if test (count $argv) -ge 1; and test $IS_OSX -eq 1
-    if string match -q -- "*brew install*" $argv; or string match -q -- "*brew cask install*" $argv
+    if string match -q -- "*brew install*" $argv;\
+      or string match -q -- "*brew cask install*" $argv;\
+      or string match -q -- "*brew remove*" $argv;
+
       brew bundle dump --force --global
 
-      read -l -P 'Commit Brewfile? [y/N] ' confirm
-      if test $confirm = 'Y' -o $confirm = 'y' -o $confirm = 'yes';
-        pushd $DOTFILES
-        set files (git diff --name-only)
-        if test (count $files) -eq 1; and set -l index (contains -i -- 'Brewfile' $files)
-          set -q DOTFILES_MSG; or set DOTFILES_MSG 'Updated Brewfile :beer:'
-          git commit -am $DOTFILES_MSG
-          git push
-        else
-          echo "Multiple files have changed, please do a manual commit"
+      pushd $DOTFILES
+      set files (git diff --name-only)
+
+      if test (count $files) -eq 1; and set -l index (contains -i -- 'tilde/.Brewfile' $files)
+        read -l -P 'Commit Brewfile? [y/N] ' confirm
+        if test $confirm = 'Y' -o $confirm = 'y' -o $confirm = 'yes';
+          if test (count $files) -eq 1; and set -l index (contains -i -- 'tilde/.Brewfile' $files)
+            set -q DOTFILES_MSG; or set DOTFILES_MSG 'Updated Brewfile :beer:'
+            git commit -am $DOTFILES_MSG
+            git push
+          end
         end
-        popd
       end
+      popd
     end
   end
 end
