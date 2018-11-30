@@ -10,7 +10,11 @@
 :command! Up up
 :command! UP up
 
+" Ignore the filenames when doing find all
+" https://github.com/junegunn/fzf.vim/issues/346
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+:command! RefreshSyntax syntax sync fromstart
 
 " Edit vim configs
 :command! DotAutoCmds vsplit $HOME/playground/dotfiles/nvim/config/autocmds.vim
