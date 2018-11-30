@@ -56,6 +56,6 @@ function postexec --on-event fish_postexec
 end
 
 if status --is-interactive
-    set BASE16_SHELL "$DOTFILES/base16-shell/"
-    source "$BASE16_SHELL/profile_helper.fish"
+  set BASE16_SHELL "$DOTFILES/base16-shell/"
+  source "$BASE16_SHELL/profile_helper.fish"
 end
