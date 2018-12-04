@@ -20,7 +20,7 @@ map <Leader>sc :setlocal spell!<CR>
 " when pasting, set paste mode first, then paste, then set paste mode off
 inoremap <C-v> <F10><C-r>+<F10>
 
-" shortcut split vertically 
+" shortcut split vertically
 map <Leader>v :vsplit<CR>
 
 " clean up any trailing whitespace
@@ -56,6 +56,7 @@ nmap <silent> <Leader>tr <Plug>(ale_find_references)
 " toggle folds with space
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
 " expand all folds when entering a file
 autocmd BufWinEnter * silent! :%foldopen!
 
