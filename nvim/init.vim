@@ -28,7 +28,10 @@ Plug 'othree/html5.vim'
 Plug 'tpope/vim-git'
 Plug 'dag/vim-fish'
 Plug 'elzr/vim-json'
-Plug 'fatih/vim-go', { 'for': ['go'] }
+" golang
+Plug 'fatih/vim-go', { 'for': 'go' }
+" terraform
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 " pandoc and markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
