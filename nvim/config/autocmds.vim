@@ -23,6 +23,3 @@ augroup END
 
 " UltiSnips
 autocmd CompleteDone * pclose
-
-" support for tsx
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx

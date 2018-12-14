@@ -100,11 +100,11 @@ call plug#end()
 
 " load configs
 source ~/playground/dotfiles/nvim/config/visuals.vim
-source ~/playground/dotfiles/nvim/config/settings.vim
+source ~/playground/dotfiles/nvim/config/simple.vim
 source ~/playground/dotfiles/nvim/config/autocmds.vim
 source ~/playground/dotfiles/nvim/config/commands.vim
 source ~/playground/dotfiles/nvim/config/plugins.vim
-source ~/playground/dotfiles/nvim/config/keymaps.vim
+source ~/playground/dotfiles/nvim/config/plugins-keymaps.vim
 
 if exists('g:colors_name')
   let coloursettings = '~/playground/dotfiles/nvim/config/colours/'.g:colors_name.'.vim'

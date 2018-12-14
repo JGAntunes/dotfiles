@@ -1,4 +1,9 @@
 "
+" basic single file config
+"
+
+
+"
 " General settings
 "
 
@@ -89,3 +94,76 @@ set grepprg=ag\ --nogroup\ --nocolor
 
 " enable paste toggle, to keep original formatting
 set pastetoggle=<F10>
+
+"
+" Keymaps
+"
+
+" clear highlights by hitting ctrl /
+nnoremap \ :noh<CR>
+
+" Save file using sudo, if we don't have permissions
+cnoremap w!! w !sudo tee %
+
+" open terminal mode vertical split with 10 lines
+nnoremap <Leader>t :10split +te<CR>
+
+" new file in current directory
+map <Leader>nf :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" toggle spellcheck
+map <Leader>sc :setlocal spell!<CR>
+
+" when pasting, set paste mode first, then paste, then set paste mode off
+inoremap <C-v> <F10><C-r>+<F10>
+
+" shortcut split vertically
+map <Leader>v :vsplit<CR>
+
+" clean up any trailing whitespace
+nnoremap <Leader>w :%s/\s\+$//<cr>:let @/=''<cr>
+
+" stolen from https://bitbucket.org/sjl/dotfiles/src/tip/vim/vimrc
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Move to the beginning/end of the line with H and L
+noremap H ^
+noremap L $
+
+" http://blog.petrzemek.net/2016/04/06/things-about-vim-i-wish-i-knew-earlier/
+" better jk normally but don't remap when it's called with a count
+" useful for visual line breaks, done by vim
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+" make copy/paste from system clip easier
+vnoremap <Leader>8 "*y
+vnoremap <Leader>9 "*p
+nnoremap <Leader>8 "*p
+
+" Edit my init.vim and source my edit.vim
+nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <Leader>sv :source $MYVIMRC<cr>
+
+
+
+"
+" COMMANDS
+"
+
+" map uppercase and mixed case
+:command! W w
+:command! WA wa
+:command! Wa wa
+:command! WQ wq
+:command! Wq wq
+:command! Q q
+:command! QA qa
+:command! Qa qa
+:command! Up up
+:command! UP up
+
+:command! RefreshSyntax syntax sync fromstart
+

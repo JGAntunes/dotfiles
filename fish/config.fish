@@ -28,6 +28,11 @@ if test -d ~/platform-tools
   set -gx PATH ~/platform-tools $PATH
 end
 
+# add aws completions
+test -x (which aws_completer);\
+  and complete --command aws --no-files --arguments\
+  '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+
 
 function postexec --on-event fish_postexec
   if test (count $argv) -ge 1; and test $IS_OSX -eq 1

@@ -1,20 +1,10 @@
-" map uppercase and mixed case
-:command! W w
-:command! WA wa
-:command! Wa wa
-:command! WQ wq
-:command! Wq wq
-:command! Q q
-:command! QA qa
-:command! Qa qa
-:command! Up up
-:command! UP up
+"
+" COMMANDS
+"
 
 " Ignore the filenames when doing find all
 " https://github.com/junegunn/fzf.vim/issues/346
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
-
-:command! RefreshSyntax syntax sync fromstart
 
 " Edit vim configs
 :command! DotAutoCmds vsplit $HOME/playground/dotfiles/nvim/config/autocmds.vim
