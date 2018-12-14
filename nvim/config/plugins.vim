@@ -79,3 +79,6 @@ let g:qf_nowrap = 0
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
 
+" terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
