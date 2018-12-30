@@ -8,7 +8,7 @@ function zordinator -d "Ultimate zord creation tool"
   argparse $options -- $argv
 
   set -gx keys 'fish' 'nvim' 'vim' 'ssh' 'tilde' 'yamllint'
-  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Application\ Support/iTerm2/DynamicProfiles ~/.ssh ~ ~/.config/yamllint
+  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim  ~/.ssh ~ ~/.config/yamllint
   set -e symlinks
   set -gx symlinks
   set -gx symlinks_error
