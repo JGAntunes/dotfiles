@@ -1,0 +1,18 @@
+[user]
+	name = JGAntunes
+	email = me@jgantunes.com
+[core]
+	editor = vim
+[push]
+	default = simple
+[gpg]
+  program = gpg2
+
+[includeIf "gitdir:~/github/"]
+  path = .github.gitconfig
+
+[includeIf "gitdir:~/kf/"]
+  path = .kf.gitconfig
+# NPM needs to clone into tmp dirs
+[credential "https://gitlab.kfplc.com"]
+	helper = cache

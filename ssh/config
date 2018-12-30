@@ -1,4 +1,189 @@
-Host *
- AddKeysToAgent yes
- UseKeychain yes
- IdentityFile ~/.ssh/id_rsa
+Host github.com
+  User git
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host github.com-kf
+  HostName github.com
+  User git
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+Host gitlab.kfplc.com
+  HostName gitlab.kfplc.com
+  User git 
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+Host *.kfplc.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+HOST *.iaas.gha.kfplc.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_iaas_kf
+
+Host kf-jump1
+  HostName lnxs0667.ghanp.kfplc.com
+  User esradm
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+Host kf-jump2
+  HostName lnxs0644.gha.kfplc.com
+  User esradm
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+Host kf-jump3
+  HostName lnxs0712.ghanp.kfplc.com
+  User esradm
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+Host kf-jump4
+  HostName lnxs0772.gha.kfplc.com
+  User esradm
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+Host kf-jump5
+  HostName lnxs0771.gha.kfplc.com
+  User esradm
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_kf
+
+Host kf-runner-a
+  HostName scagitrunner-a.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-runner-b
+  HostName scagitrunner-b.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-runner-c
+  HostName scagitrunner-c.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-runner-d
+  HostName scagitrunner-d.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-runner4
+  HostName sca-gitrunner-4.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-runner8
+  HostName sca-gitrunner-8.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-runner13
+  HostName sca-gitrunner-13.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-runner15
+  HostName sca-gitrunner-15.iaas.gha.kfplc.com
+  User cloud-user
+  IdentityFile ~/.ssh/id_rsa_kf
+  ProxyCommand ssh -W %h:%p kf-jump5
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-kubernetes-np
+  HostName dps-deployment.dpsnp.kd.kfplc.com
+  User antunj01
+  ProxyCommand ssh -W %h:%p kf-jump5
+  IdentityFile ~/.ssh/id_rsa_kf
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host kf-iaas-storeui-ci
+  HostName storeuici-a.iaas.gha.kfplc.com
+  User cloud-user
+  ProxyCommand ssh -W %h:%p kf-jump3
+  IdentityFile ~/.ssh/id_rsa_iaas_kf
+  LogLevel FATAL
+  ForwardAgent no
+  IdentitiesOnly yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ServerAliveInterval 30
+  ServerAliveCountMax 120
+
+Host *.amazonaws.com
+  User git 
+  IdentityFile ~/.ssh/id_rsa_aws_yld
+  IdentitiesOnly yes
