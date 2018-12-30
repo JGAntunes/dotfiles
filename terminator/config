@@ -1,0 +1,136 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+  window_state = maximise
+[keybindings]
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  go_up = <Alt>k
+  group_tab_toggle = <Primary><Shift>g
+  layout_launcher = <Alt>p
+  next_tab = <Shift><Alt>l
+  prev_tab = <Shift><Alt>h
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[jgantunes]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:60
+      size = 3200, 1674
+      title = fish  /home/jgantunes
+      type = Window
+    [[[child1]]]
+      active_page = 0
+      labels = None, None
+      last_active_term = 0ed47eb3-003d-479c-8081-1d7da1043f1d, 252661a1-23f4-4492-8a7d-fd77edd2bf2b
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child10]]]
+      order = 0
+      parent = child9
+      position = 814
+      ratio = 0.499694189602
+      type = VPaned
+    [[[child13]]]
+      order = 1
+      parent = child9
+      position = 814
+      ratio = 0.499694189602
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 813
+      ratio = 0.499082568807
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 1597
+      ratio = 0.5
+      type = HPaned
+    [[[child6]]]
+      order = 1
+      parent = child2
+      position = 1597
+      ratio = 0.5
+      type = HPaned
+    [[[child9]]]
+      order = 1
+      parent = child1
+      position = 1597
+      ratio = 0.5
+      type = HPaned
+    [[[terminal11]]]
+      order = 0
+      parent = child10
+      profile = jgantunes
+      type = Terminal
+      uuid = 4e34adb6-5e7d-47bd-86f0-af5cdb91787d
+    [[[terminal12]]]
+      order = 1
+      parent = child10
+      profile = jgantunes
+      type = Terminal
+      uuid = 81b0311b-81ad-4f3b-89d6-c70f36f2b761
+    [[[terminal14]]]
+      order = 0
+      parent = child13
+      profile = jgantunes
+      type = Terminal
+      uuid = 252661a1-23f4-4492-8a7d-fd77edd2bf2b
+    [[[terminal15]]]
+      order = 1
+      parent = child13
+      profile = jgantunes
+      type = Terminal
+      uuid = 50eac1ab-a1fb-498b-a73f-ce34db97fdd7
+    [[[terminal4]]]
+      order = 0
+      parent = child3
+      profile = jgantunes
+      type = Terminal
+      uuid = f6a2fdc9-25a6-46fd-84b7-bafaa1c1fd4b
+    [[[terminal5]]]
+      order = 1
+      parent = child3
+      profile = jgantunes
+      type = Terminal
+      uuid = 0ed47eb3-003d-479c-8081-1d7da1043f1d
+    [[[terminal7]]]
+      order = 0
+      parent = child6
+      profile = jgantunes
+      type = Terminal
+      uuid = 14a4ba5f-41db-41c4-80e4-0071c274dcdc
+    [[[terminal8]]]
+      order = 1
+      parent = child6
+      profile = jgantunes
+      type = Terminal
+      uuid = af1d7a35-672d-4bf0-8c68-465d7ce0d413
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    split_to_group = True
+  [[jgantunes]]
+    background_color = "#003543"
+    background_darkness = 0.89
+    background_image = None
+    font = Roboto Mono for Powerline 11
+    foreground_color = "#839496"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    use_system_font = False

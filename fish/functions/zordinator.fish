@@ -8,7 +8,22 @@ function zordinator -d "Ultimate zord creation tool"
   argparse $options -- $argv
 
   set -gx keys 'fish' 'nvim' 'vim' 'ssh' 'tilde' 'yamllint'
+  set -gx linux_keys 'terminator'
+  set -gx osx_keys
+
   set -gx paths ~/.config/fish ~/.config/nvim ~/.vim  ~/.ssh ~ ~/.config/yamllint
+  set -gx linux_paths  ~/.config/terminator
+  set -gx osx_paths
+
+  # add the platform specifc symlinks
+  if test $IS_LINUX -eq 1
+    set -gx keys $keys$linux_keys
+    set -gx paths $paths$linux_paths
+  else if test $IS_OSX -eq 1
+    set -gx keys $keys$osx_keys
+    set -gx paths $paths$osx_paths
+  end
+
   set -e symlinks
   set -gx symlinks
   set -gx symlinks_error
