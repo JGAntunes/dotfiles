@@ -1,114 +1,111 @@
-set nocompatible
-set encoding=utf8
+call plug#begin('~/.local/share/nvim/plugged')
 
-" https://github.com/vim/vim/issues/3117
-if !has('patch-8.1.201')
-  silent! python3 1
-endif
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'https://github.com/terryma/vim-multiple-cursors'
+" Plug 'roxma/nvim-completion-manager'
+Plug 'https://github.com/editorconfig/editorconfig-vim'
 
-if has('nvim')
-  call plug#begin('~/.local/share/nvim/plugged')
-else
-  call plug#begin('~/.vim/plugged')
-endif
 
-" Syntax
-" Javascript, Node and React
-Plug 'moll/vim-node'
-Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
-Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
-Plug 'styled-components/vim-styled-components', {'for': ['javascript', 'javascript.jsx']}
-" css and scss
-Plug 'JulesWang/css.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'ap/vim-css-color'
-Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss'] }
-" html
-Plug 'othree/html5.vim'
-Plug 'tpope/vim-git'
+" Syntax support for fish script
 Plug 'dag/vim-fish'
-Plug 'elzr/vim-json'
-" golang
-Plug 'fatih/vim-go', { 'for': 'go' }
-" terraform
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-" pandoc and markdown
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-
-" linter
-Plug 'w0rp/ale'
-
-" deoplete for nvim and vim
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-" tern
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install --global tern' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install --global tern' }
-
-" Run async stuff
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" emmet support
-Plug 'mattn/emmet-vim'
-" enhanced quickfix window
-Plug 'romainl/vim-qf'
+" Syntax support for bats
+Plug 'vim-scripts/bats.vim'
+" Syntax support for helm
+Plug 'towolf/vim-helm'
+" Syntax support for LaTex
+Plug 'lervag/vimtex'
+" Comments
+Plug 'tpope/vim-commentary'
+" Git status on the side
+Plug 'airblade/vim-gitgutter'
+" Which and exec functions targeted at local node projects
+Plug 'jaawerth/nrun.vim'
+" Run async progs
+Plug 'neomake/neomake'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Split and join lines
-Plug 'AndrewRadev/splitjoin.vim'
-" highlights matching tags
-Plug 'Valloric/MatchTagAlways'
-" Insert or delete brackets, parens, quotes in pair.
+" Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Pairs of {} and stuff
 Plug 'jiangmiao/auto-pairs'
-" Asks to create directories in Vim when needed
-Plug 'jordwalke/VimAutoMakeDirectory'
-" fuzzy searching using fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" searches for local vimrc files and loads them, useful for extra config for a specfic project
-Plug 'embear/vim-localvimrc'
-" searches for the current selection, rather than the current word
-Plug 'thinca/vim-visualstar'
-" toggles comments
-Plug 'tpope/vim-commentary'
-" Provides easier unix commands like :Delete :Rename etc
-Plug 'tpope/vim-eunuch'
-" Git shortcuts like :Gblame :Gstatus etc
-Plug 'tpope/vim-fugitive'
-" enhanced repeat of the last command
-Plug 'tpope/vim-repeat'
-" easily surround sutff with tags, brackets, quotes, etc
-Plug 'tpope/vim-surround'
-
-" tmux
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-
-" themes and status bar
-Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" ag plugin
+Plug 'rking/ag.vim' 
 call plug#end()
 
+" keep buffer state (can use U on previously closed stuff)
+set hidden
+" nerd tree shortcut
+map <C-t> :NERDTreeToggle<CR>
+" close vim if the only window left open is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" enable autocomplete
+" let g:deoplete#enable_at_startup = 1
+" neomake
+let g:neomake_open_list = 2
+" JS linting setup
+" let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_javascript_enabled_makers = ['standard','semistandard']
+" let g:neomake_javascript_enabled_makers = ['semistandard', 'eslint']
+autocmd Filetype javascript let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
+autocmd Filetype javascript let g:neomake_javascript_semistandard_exe = nrun#Which('semistandard')
+autocmd Filetype javascript let g:neomake_javascript_standard_exe = nrun#Which('standard')
+autocmd! BufWritePost *.js Neomake
+" Shell linting setup
+let g:neomake_shell_enabled_makers = ['shellcheck']
+let g:neomake_shellcheck_args = ['-fgcc']
+autocmd! BufWritePost *.sh Neomake
+autocmd! BufWritePost *.bash Neomake
+nnoremap <leader><leader>b :ll<CR>         " go to current error/warning
+nnoremap <leader><leader>m :lnext<CR>      " next error/warning
+nnoremap <leader><leader>n :lprev<CR>      " previous error/warning
 
-" load configs
-source ~/playground/dotfiles/nvim/config/visuals.vim
-source ~/playground/dotfiles/nvim/config/simple.vim
-source ~/playground/dotfiles/nvim/config/autocmds.vim
-source ~/playground/dotfiles/nvim/config/commands.vim
-source ~/playground/dotfiles/nvim/config/plugins.vim
-source ~/playground/dotfiles/nvim/config/plugins-keymaps.vim
+" line numbers
+set number
+set relativenumber
 
-if exists('g:colors_name')
-  let coloursettings = '~/playground/dotfiles/nvim/config/colours/'.g:colors_name.'.vim'
-  if !empty(glob(coloursettings))
-    execute 'source '.coloursettings
-  endif
-endif
+augroup linenumbers
+  autocmd!
+  autocmd BufEnter *    :set relativenumber
+  autocmd BufLeave *    :set number norelativenumber
+  autocmd WinEnter *    :set relativenumber
+  autocmd WinLeave *    :set number norelativenumber
+  autocmd InsertEnter * :set number norelativenumber
+  autocmd InsertLeave * :set relativenumber
+  autocmd FocusLost *   :set number norelativenumber
+  autocmd FocusGained * :set relativenumber
+augroup END
+
+" tabs and indent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+
+" clear highlights by hitting ESC
+" or by hitting enter in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <CR> :noh<CR><CR>
+
+" lang
+set spelllang=en_gb
+
+" snippet config
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes
+set guicursor=
+
+" disable arrow keys, YOLO
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
