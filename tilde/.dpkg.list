@@ -1,0 +1,17 @@
+fonts-powerline					install
+fish						install
+htop						install
+jq						install
+neovim						install
+python3						install
+terminator					install
+google-chrome-stable				install
+spotify-client					install
+virtualbox					install
+wget						install
+curl						install
+docker-ce					install
+gnupg						deinstall
+gnupg2						install
+keybase						install
+keepassxc					install

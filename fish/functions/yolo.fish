@@ -1,14 +1,13 @@
-function yolo -d "All your dotfiles are belong to us"
+function zordinator -d "Ultimate zord creation tool"
   set -gx flags $argv
   set -l options (fish_opt --short=f --long=force)
-  set -l options $options (fish_opt --short=n --long=node)
   set -l options $options (fish_opt --short=m --long=fisherman)
   set -l options $options (fish_opt --short=s --long=symlink)
   set -l options $options (fish_opt --short=v --long=vimplug)
   set -l options $options (fish_opt --short=c --long=copy)
   argparse $options -- $argv
 
-  set -gx keys 'fish' 'nvim' 'vim' 'iterm2' 'ssh' 'tilde' 'yamllint'
+  set -gx keys 'fish' 'nvim' 'vim' 'ssh' 'tilde' 'yamllint'
   set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/Library/Application\ Support/iTerm2/DynamicProfiles ~/.ssh ~ ~/.config/yamllint
   set -e symlinks
   set -gx symlinks
@@ -30,10 +29,6 @@ function yolo -d "All your dotfiles are belong to us"
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
     # install fisher dependencies
     fisher install
-  end
-
-  function install_node_packages
-    npm i -g eslint stylelint tern prettier
   end
 
   function install_vim_plug
