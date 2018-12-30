@@ -37,11 +37,9 @@ function postexec --on-event fish_postexec
       if test (count $files) -eq 1; and set -l index (contains -i -- 'tilde/.Brewfile' $files)
         read -l -P 'Commit Brewfile? [y/N] ' confirm
         if test $confirm = 'Y' -o $confirm = 'y' -o $confirm = 'yes';
-          if test (count $files) -eq 1; and set -l index (contains -i -- 'tilde/.Brewfile' $files)
-            set -q DOTFILES_MSG; or set DOTFILES_MSG 'Updated Brewfile :beer:'
-            git commit -am $DOTFILES_MSG
-            git push
-          end
+          set -q DOTFILES_MSG; or set DOTFILES_MSG 'Updated Brewfile :beer:'
+          git commit -am $DOTFILES_MSG
+          git push
         end
       end
       popd
