@@ -1,5 +1,5 @@
 # Dotfiles AKA ZORDinator
-Heavily based on @FabioAntunes [ones](https://github.com/FabioAntunes/dotfiles). Thanks bud :+1:
+Heavily based on [@FabioAntunes](https://github.com/FabioAntunes) [ones](https://github.com/FabioAntunes/dotfiles). Thanks bud :+1:
 
 Its focus is to hold everything that I need to be productive in any Unix based env.
 
@@ -7,7 +7,16 @@ So, behold, **ZORDinator**, the maker of ZORDS!
 
 ![image](https://user-images.githubusercontent.com/5799039/50553897-8829f180-0ca8-11e9-82be-67ff3f97d916.gif)
 
-## Abou
+## About
+I use:
+* fish
+* neovim
+* terminator/iTerm2
+* ubuntu based OSes
+* OSX sometimes
+* other stuff I don't actually remember
+
+So that's basically what you're going to get here :eyes:
 
 ## Installation
 #### Clone this repo
