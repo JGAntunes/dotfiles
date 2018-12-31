@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 if [[ $EUID -eq 0 ]]; then
     error "This script should not be run using sudo or as the root user"
@@ -38,7 +39,7 @@ get_gpg_pub_key () {
 
 if [ "$(uname)" == "Darwin" ]; then
   source ./macos.sh
-elif [ "$(substr "$(uname -s)" 1 5)" == "Linux" ]; then
+elif [ "$(expr substr "$(uname -s)" 1 5)" == "Linux" ]; then
   source ./linux.sh
 fi
 
@@ -46,3 +47,5 @@ get_gpg_pub_key
 install_nvm
 install_powerfonts
 set_fish_shell
+
+set +ex

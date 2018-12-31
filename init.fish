@@ -1,2 +1,5 @@
+#!/usr/bin/env fish
+
+source fish/config.fish
 source fish/functions/zordinator.fish
-zordinator
+zordinator --symlink --fisherman --vimplug

@@ -11,17 +11,17 @@ function zordinator -d "Ultimate zord creation tool"
   set -gx linux_keys 'terminator'
   set -gx osx_keys
 
-  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim  ~/.ssh ~ ~/.config/yamllint
-  set -gx linux_paths  ~/.config/terminator
+  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~ ~/.config/yamllint
+  set -gx linux_paths ~/.config/terminator
   set -gx osx_paths
 
   # add the platform specifc symlinks
   if test $IS_LINUX -eq 1
-    set -gx keys $keys$linux_keys
-    set -gx paths $paths$linux_paths
+    set -gx keys $keys $linux_keys
+    set -gx paths $paths $linux_paths
   else if test $IS_OSX -eq 1
-    set -gx keys $keys$osx_keys
-    set -gx paths $paths$osx_paths
+    set -gx keys $keys $osx_keys
+    set -gx paths $paths $osx_paths
   end
 
   set -e symlinks
@@ -43,7 +43,7 @@ function zordinator -d "Ultimate zord creation tool"
   function install_fisherman
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
     # install fisher dependencies
-    fisher install
+    fisher
   end
 
   function install_vim_plug
@@ -166,15 +166,6 @@ function zordinator -d "Ultimate zord creation tool"
     if test -n "$_flag_v"; or test $has_no_args -eq 1
       install_vim_plug
     end
-
-    if test -n "$_flag_n"; or test $has_no_args -eq 1
-      install_node_packages
-    end
-
-    if test -n "$_flag_c"; or test $has_no_args -eq 1
-      copy_files
-    end
-
   end
 
   test_args

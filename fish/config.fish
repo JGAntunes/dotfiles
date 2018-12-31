@@ -13,7 +13,7 @@ set -gx theme_display_cmd_duration no
 if test (uname -s) = 'Darwin'
   set -gx IS_OSX 1
   set -gx PATH /usr/local/homebrew/bin $PATH
-else if test (substr (uname -s) 1 5) = 'Linux'
+else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
 end
 
@@ -82,6 +82,6 @@ function postexec --on-event fish_postexec
 end
 
 if status --is-interactive
-  set BASE16_SHELL "$DOTFILES/base16-shell/"
+  set BASE16_SHELL "$DOTFILES/base16-shell"
   source "$BASE16_SHELL/profile_helper.fish"
 end
