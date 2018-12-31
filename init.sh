@@ -32,13 +32,17 @@ install_nvm () {
   nvm install --lts
 }
 
+get_gpg_pub_key () {
+  gpg2 --recv 0xC3F49CB32A698E79
+}
+
 if [ "$(uname)" == "Darwin" ]; then
   source ./macos.sh
 elif [ "$(substr "$(uname -s)" 1 5)" == "Linux" ]; then
   source ./linux.sh
 fi
 
-config_git
+get_gpg_pub_key
 install_nvm
 install_powerfonts
 set_fish_shell
