@@ -151,9 +151,7 @@ function zordinator -d "Ultimate zord creation tool"
   function test_args --no-scope-shadowing
     set has_no_args 0
 
-    if test $has_force -ge 1; and begin; test $flags = '-f'; or test $flags = '--force'; end
-      set has_no_args 1
-    end
+    [ $has_force -ge 1 -a \( "$flags" != '-f' -o "$flags" = '--force' \) -o (count $flags) -eq 0 ]; and set has_no_args 1
 
     if test -n "$_flag_s"; or test $has_no_args -eq 1
       create_symlinks
