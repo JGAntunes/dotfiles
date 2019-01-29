@@ -37,6 +37,12 @@ get_gpg_pub_key () {
   gpg2 --recv 0xC3F49CB32A698E79
 }
 
+set_git_hooks () {
+  # set path for hooks in the dotfiles
+  git config core.hooksPath hooks
+  chmod +x hooks/post-merge
+}
+
 if [ "$(uname)" == "Darwin" ]; then
   source ./macos.sh
 elif [ "$(expr substr "$(uname -s)" 1 5)" == "Linux" ]; then
@@ -44,6 +50,7 @@ elif [ "$(expr substr "$(uname -s)" 1 5)" == "Linux" ]; then
 fi
 
 get_gpg_pub_key
+set_git_hooks
 install_nvm
 install_powerfonts
 set_fish_shell

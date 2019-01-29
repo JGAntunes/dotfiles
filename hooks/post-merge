@@ -2,8 +2,12 @@
 
 set changed_files (git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)
 
-if contains 'Brewfile' $changed_files
- brew bundle --global
+if contains 'Brewfile' $changed_files; and test $IS_OSX -eq 1
+  brew bundle --global
+end
+
+if contains 'dpkg.list' $changed_files; and test $IS_LINUX -eq 1
+  sudo dpkg --set-selections < ~/.dpkg.list
 end
 
 if contains '.gitmodules' $changed_files

@@ -45,8 +45,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:neomake_open_list = 2
 " JS linting setup
 " let g:neomake_javascript_enabled_makers = ['standard']
-let g:neomake_javascript_enabled_makers = ['standard','semistandard']
-" let g:neomake_javascript_enabled_makers = ['semistandard', 'eslint']
+" let g:neomake_javascript_enabled_makers = ['standard','semistandard']
+let g:neomake_javascript_enabled_makers = ['standard', 'semistandard', 'eslint']
 autocmd Filetype javascript let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
 autocmd Filetype javascript let g:neomake_javascript_semistandard_exe = nrun#Which('semistandard')
 autocmd Filetype javascript let g:neomake_javascript_standard_exe = nrun#Which('standard')

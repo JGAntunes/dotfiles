@@ -8,11 +8,19 @@
 [gpg]
   program = gpg2
 
-[includeIf "gitdir:~/github/"]
+[includeIf "gitdir:~/workspace/github/"]
   path = .github.gitconfig
 
-[includeIf "gitdir:~/kf/"]
+[includeIf "gitdir:~/workspace/kf/"]
   path = .kf.gitconfig
 # NPM needs to clone into tmp dirs
 [credential "https://gitlab.kfplc.com"]
 	helper = cache
+
+# aliases
+[alias]
+  stash-untracked = "!f() {    \
+    git stash;               \
+    git stash -u;            \
+    git stash pop stash@{1}; \
+  }; f"
