@@ -7,6 +7,8 @@ So, behold, **ZORDinator**, the maker of ZORDS!
 
 ![image](https://user-images.githubusercontent.com/5799039/50553897-8829f180-0ca8-11e9-82be-67ff3f97d916.gif)
 
+(For reference the pun resides in the fact that all my machines have some kind of ZORD in its name - e.g. megaZORD, brutoZORD)
+
 ## About
 I use:
 * fish
