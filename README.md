@@ -63,12 +63,15 @@ The next args allows you to run the function in a granular way, feel free to com
 At the end it will output all the symlinks created, any errors creating symlinks and any backup files created.
 
 ### Post install
-All the paths should direct you to the dotfiles! There's a `post_exec` function inside the `config.fish`, that listens for any `brew install` and `brew cask install`. Whenever that happens, a Brewfile is dumped, commited and pushed to the git repo.
-The message will be `Updated Brewfile :beer:`. You can change this by setting `$DOTFILES_MSG` to whatever you want.
+All the paths should direct you to the dotfiles! There's a `post_exec` function inside the `config.fish`, that:
 
-TODO document apt behaviour
+* For OSX:
+  * Listens for any  `brew install` and `brew cask install`.
+  * Dumps a `Brewfile`, commits and pushes it.
+  * The message will be `Updated Brewfile :beer:`. You can change this by setting `$DOTFILES_MSG` to whatever you want.
+* For Linux:
+  * Listens for any `apt{-get} install`.
+  * Adds a line to the `.dpkg.list` with the installed software.
+  * The message will be `Updated dpkg list with <installed_package>`. You can change this by setting `$DOTFILES_MSG` to whatever you want.
 
-#N?VIM
-
-TODO
-
+TODO document nvim stuff
