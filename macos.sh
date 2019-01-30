@@ -10,6 +10,9 @@ defaults write -g KeyRepeat -int 2
 install_brew () {
   rm -rf homebrew; mkdir homebrew
   curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew && \
+  if [ -f /usr/local/homebrew ]; then
+    sudo mv /usr/local/homebrew /usr/local/homebrew_backup
+  fi
   sudo mv homebrew /usr/local/
 }
 

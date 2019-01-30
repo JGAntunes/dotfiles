@@ -8,10 +8,10 @@
 [gpg]
   program = gpg2
 
-[includeIf "gitdir:~/workspace/github/"]
+[includeIf "gitdir:~/Documents/github/"]
   path = .github.gitconfig
 
-[includeIf "gitdir:~/workspace/kf/"]
+[includeIf "gitdir:~/Documents/kf/"]
   path = .kf.gitconfig
 # NPM needs to clone into tmp dirs
 [credential "https://gitlab.kfplc.com"]
