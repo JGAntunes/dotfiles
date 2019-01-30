@@ -1,13 +1,14 @@
 matrix:
   include:
     - name: Linux
+      sudo: true
       os: linux
       dist: xenial
     - name: OSX
+      sudo: true
       os: osx
       osx_image: xcode10.1
 
 install: true
-sudo: true
 
 script: ./init.sh
