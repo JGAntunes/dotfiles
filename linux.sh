@@ -7,7 +7,7 @@ install_from_dpkg_list () {
   <tilde/.ppa.list xargs -I % sudo add-apt-repository %
   # Install missing packages
   sudo apt update
-  sudo cat tilde/.dpkg.list | dpkg --set-selections
+  sudo dpkg --set-selections < tilde/.dpkg.list
   sudo apt-get dselect-upgrade
 }
 
