@@ -34,7 +34,7 @@ install_nvm () {
 }
 
 get_gpg_pub_key () {
-  gpg2 --recv 0xC3F49CB32A698E79
+  gpg2 --recv 0xC3F49CB32A698E79 --keyserver hkp://keys.gnupg.net
 }
 
 set_git_hooks () {
