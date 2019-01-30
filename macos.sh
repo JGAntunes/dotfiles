@@ -13,7 +13,7 @@ install_brew () {
   if [ -f /usr/local/homebrew ]; then
     sudo mv /usr/local/homebrew /usr/local/homebrew_backup
   fi
-  sudo mv homebrew /usr/local/
+  sudo mv homebrew /usr/local/homebrew
 }
 
 install_from_brewfile () {
