@@ -4,6 +4,10 @@ matrix:
       sudo: true
       os: linux
       dist: xenial
+      addons:
+        apt:
+          packages:
+          - dirmngr
       before_script:
       - sudo apt-get purge mysql*
 
