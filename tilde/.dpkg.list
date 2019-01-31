@@ -5,6 +5,7 @@ jq						install
 neovim						install
 python3						install
 python3-pip       install
+python3-setuptools       install
 terminator					install
 google-chrome-stable				install
 spotify-client					install
