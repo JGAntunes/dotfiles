@@ -15,6 +15,10 @@ matrix:
       sudo: true
       os: osx
       osx_image: xcode10.1
+      before_script:
+      - brew uninstall --force gpg2
+      - brew uninstall --force python3
+      - brew uninstall --force wget
 
 install: true
 
