@@ -16,6 +16,9 @@ if test (uname -s) = 'Darwin'
   set -gx PATH /usr/local/homebrew/bin $PATH
 else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
+
+  # set gpg alias
+  alias gpg="gpg2"
 end
 
 # add aws completions
