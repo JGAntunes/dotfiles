@@ -10,6 +10,7 @@ matrix:
           - dirmngr
       before_script:
       - sudo apt-get purge mysql*
+      - sudo apt-get purge python*
 
     - name: OSX
       sudo: true
