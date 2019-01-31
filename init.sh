@@ -33,9 +33,19 @@ install_nvm () {
   nvm install --lts
 }
 
-get_gpg_pub_key () {
-  gpg --keyserver hkp://keys.gnupg.net --recv-keys 0xC3F49CB32A698E79
+# hack to go through the mess of gpg vs gpg2
+gpg_exec () {
+  if gpg2 --version foo >/dev/null 2>&1; then
+    gpg2 "$@" 
+  else
+    gpg "$@"
+  fi
 }
+
+get_gpg_pub_key () {
+  gpg_exec --keyserver hkp://keys.gnupg.net --recv-keys 0xC3F49CB32A698E79
+}
+
 
 set_git_hooks () {
   # set path for hooks in the dotfiles
