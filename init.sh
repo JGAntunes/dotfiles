@@ -43,6 +43,11 @@ set_git_hooks () {
   chmod +x hooks/post-merge
 }
 
+neovim_py () {
+  # install python support for neovim
+  pip3 install --user neovim
+}
+
 if [ "$(uname)" == "Darwin" ]; then
   source ./macos.sh
 elif [ "$(expr substr "$(uname -s)" 1 5)" == "Linux" ]; then
@@ -53,6 +58,7 @@ get_gpg_pub_key
 set_git_hooks
 install_nvm
 install_powerfonts
+neovim_py
 set_fish_shell
 
 set +ex
