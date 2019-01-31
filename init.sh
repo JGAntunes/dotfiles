@@ -35,7 +35,7 @@ install_nvm () {
 
 # hack to go through the mess of gpg vs gpg2
 gpg_exec () {
-  if gpg2 --version foo >/dev/null 2>&1; then
+  if gpg2 --version >/dev/null 2>&1; then
     gpg2 "$@" 
   else
     gpg "$@"
