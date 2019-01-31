@@ -11,8 +11,6 @@ install_from_dpkg_list () {
   sudo dselect update
   sudo dpkg --set-selections < tilde/.dpkg.list
   sudo apt-get dselect-upgrade -y
-  # Set gpg alias
-  alias gpg="gpg2"
 }
 
 install_from_dpkg_list

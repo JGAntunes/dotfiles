@@ -13,7 +13,6 @@ virtualbox					install
 wget						install
 curl						install
 docker-ce					install
-gnupg						deinstall
 gnupg2						install
 keybase						install
 keepassxc					install
