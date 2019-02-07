@@ -94,11 +94,6 @@ function zordinator -d "Ultimate zord creation tool"
         set dist_file ( string join '' $dist_path '/vimrc' )
       end
 
-      if test -d $src_file; and test $file = 'config'; or string match -q -- '*noop*' $file
-        continue
-      end
-
-
       if test -d $src_file
         iterate $src_file $dist_file
       else if test -e $dist_file; and not test -L $dist_file

@@ -46,7 +46,4 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " load configs
-source ~/workspace/github/dotfiles/nvim/config/base.vim
-source ~/workspace/github/dotfiles/nvim/config/visuals.vim
-source ~/workspace/github/dotfiles/nvim/config/plugins.vim
-source ~/workspace/github/dotfiles/nvim/config/plugins-keymaps.vim
+runtime! config/*.vim
