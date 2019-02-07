@@ -15,7 +15,7 @@ brew "python3"
 brew "tfenv"
 brew "the_silver_searcher"
 brew "tree"
-brew "vim", args: ["with-override-system-vi"]
+brew "vim"
 brew "wget"
 brew "yamllint"
 brew "docker"
