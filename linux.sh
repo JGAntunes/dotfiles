@@ -1,5 +1,4 @@
 #!/bin/bash
-
 fish_path=/usr/bin/fish
 
 install_from_dpkg_list () {

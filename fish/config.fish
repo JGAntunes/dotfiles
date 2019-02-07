@@ -2,11 +2,11 @@
 set -gx DOTFILES ~/workspace/github/dotfiles
 
 # theme configs
+set -gx theme_color_scheme solarized
 set -gx theme_display_git_untracked yes
 set -gx theme_display_k8s_context yes
 set -gx theme_display_user yes
 set -gx theme_display_git yes
-set -gx theme_color_scheme terminal
 set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
 
