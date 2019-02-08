@@ -7,7 +7,7 @@ else
 endif
 
 " Color scheme
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 " NerdTree navigation bar <3
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Support for multiple cursors
