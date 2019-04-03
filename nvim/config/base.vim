@@ -1,5 +1,5 @@
 
-
+" leader ,
 let mapleader=","
 noremap \ ,
 
@@ -57,6 +57,13 @@ cnoremap w!! w !sudo tee %
 vnoremap <Leader>8 "*y
 vnoremap <Leader>9 "*p
 nnoremap <Leader>9 "*p
+
+" open terminal mode vertical split with 10 lines
+nnoremap <Leader>t :10split +te<CR>
+" shortcut split vertically
+map <Leader>v :vsplit<CR>
+" shortcut exit window
+map <Leader>q :q<CR>
 
 " map uppercase and mixed case
 :command! W w

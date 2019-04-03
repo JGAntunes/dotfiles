@@ -5,3 +5,4 @@ scorphus/plugin-go-gvm
 evanlucas/fish-kubectl-completions
 FabioAntunes/fish-nvm
 oh-my-fish/plugin-thefuck
+jethrokuan/fzf

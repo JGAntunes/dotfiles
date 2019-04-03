@@ -11,6 +11,7 @@
   group_tab_toggle = <Primary><Shift>g
   layout_launcher = <Alt>p
   next_tab = <Shift><Alt>l
+  page_up_half = None
   prev_tab = <Shift><Alt>h
 [layouts]
   [[default]]
