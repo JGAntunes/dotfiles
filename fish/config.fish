@@ -1,6 +1,10 @@
 # misc vars
 set -gx DOTFILES ~/workspace/github/dotfiles
 
+# gpg-agent config
+set -gx GPG_TTY (tty)
+set -gx SSH_AUTH_SOCK "/home/jgantunes/.gnupg/S.gpg-agent.ssh"
+
 # theme configs
 set -gx theme_color_scheme solarized
 set -gx theme_display_git_untracked yes

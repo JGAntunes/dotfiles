@@ -1,6 +1,13 @@
 Host github.com
   User git
   IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_yubikey_personal.pub
+
+Host github.com-yld
+  HostName github.com
+  User git
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa_yubikey_yld.pub
 
 Host *.amazonaws.com
   User git 
