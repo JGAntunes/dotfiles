@@ -20,5 +20,11 @@ install_from_brewfile () {
   pip3 install --user neovim
 }
 
+# create symlinks for cross os compatibility
+symlinks () {
+  ln -sf $(which gpg) /usr/local/bin/gpg2
+}
+
 install_brew
 install_from_brewfile
+symlinks
