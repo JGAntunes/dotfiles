@@ -14,8 +14,8 @@ set -gx theme_display_git yes
 set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
 
-# gvm
-set -gx PATH $PATH (find ~/.gvm/*/current/bin -maxdepth 0)
+# gvm default
+fenv "source ~/.gvm/environments/default"
 
 # set the used platform
 if test (uname -s) = 'Darwin'
