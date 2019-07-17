@@ -8,13 +8,25 @@
 [gpg]
   program = gpg2
 
+# Legacy ~/Documents structure
 [includeIf "gitdir:~/Documents/github/"]
   path = .github.gitconfig
+
+[includeIf "gitdir:~/Documents/kf/"]
+  path = .kf.gitconfig
 
 [includeIf "gitdir:~/Documents/yld/"]
   path = .yld.gitconfig
 
-[includeIf "gitdir:~/Documents/kf/"]
+######
+
+[includeIf "gitdir:~/workspace/github/"]
+  path = .github.gitconfig
+
+[includeIf "gitdir:~/workspace/yld/"]
+  path = .yld.gitconfig
+
+[includeIf "gitdir:~/workspace/kf/"]
   path = .kf.gitconfig
 # NPM needs to clone into tmp dirs
 [credential "https://gitlab.kfplc.com"]

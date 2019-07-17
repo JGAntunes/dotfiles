@@ -1,10 +1,6 @@
 # misc vars
 set -gx DOTFILES ~/workspace/github/dotfiles
 
-# gpg-agent config
-set -gx GPG_TTY (tty)
-set -gx SSH_AUTH_SOCK "/home/jgantunes/.gnupg/S.gpg-agent.ssh"
-
 # theme configs
 set -gx theme_color_scheme solarized
 set -gx theme_display_git_untracked yes
@@ -18,11 +14,21 @@ set -gx theme_display_cmd_duration no
 fenv "source ~/.gvm/environments/default"
 
 # set the used platform
+set -gx IS_OSX 0
+set -gx IS_LINUX 0
 if test (uname -s) = 'Darwin'
   set -gx IS_OSX 1
   set -gx PATH /usr/local/homebrew/bin $PATH
 else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
+end
+
+# gpg-agent config
+set -gx GPG_TTY (tty)
+if test $IS_LINUX -eq 1
+  set -gx SSH_AUTH_SOCK "/home/jgantunes/.gnupg/S.gpg-agent.ssh"
+else if test $IS_OSX -eq 1
+  set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 end
 
 # add aws completions
