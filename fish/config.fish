@@ -14,6 +14,9 @@ set -gx theme_display_git yes
 set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
 
+# gvm
+set -gx PATH $PATH (find ~/.gvm/*/current/bin -maxdepth 0)
+
 # set the used platform
 if test (uname -s) = 'Darwin'
   set -gx IS_OSX 1

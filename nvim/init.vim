@@ -15,6 +15,9 @@ Plug 'mg979/vim-visual-multi'
 " Plug 'roxma/nvim-completion-manager'
 Plug 'https://github.com/editorconfig/editorconfig-vim'
 
+" Go <3
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Syntax support for fish script
 Plug 'dag/vim-fish'
 " Syntax support for bats

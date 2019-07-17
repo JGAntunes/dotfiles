@@ -11,6 +11,9 @@
 [includeIf "gitdir:~/Documents/github/"]
   path = .github.gitconfig
 
+[includeIf "gitdir:~/Documents/yld/"]
+  path = .yld.gitconfig
+
 [includeIf "gitdir:~/Documents/kf/"]
   path = .kf.gitconfig
 # NPM needs to clone into tmp dirs

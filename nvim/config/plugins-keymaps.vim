@@ -6,6 +6,12 @@ nnoremap <leader><leader>b :ll<CR>         " go to current error/warning
 nnoremap <leader><leader>m :lnext<CR>      " next error/warning
 nnoremap <leader><leader>n :lprev<CR>      " previous error/warning
 
+" Go
+" Disable GoDef default mapping
+let g:go_def_mapping_enabled = 0
+" Auto linting, vet and YOLO on save
+let g:go_metalinter_autosave = 1
+
 " snippet config
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
