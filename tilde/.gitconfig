@@ -28,6 +28,9 @@
 
 [includeIf "gitdir:~/workspace/kf/"]
   path = .kf.gitconfig
+
+[includeIf "gitdir:~/workspace/shl/"]
+  path = .shl.gitconfig
 # NPM needs to clone into tmp dirs
 [credential "https://gitlab.kfplc.com"]
 	helper = cache
