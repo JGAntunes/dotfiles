@@ -30,10 +30,15 @@ Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 " Git status on the side
 Plug 'airblade/vim-gitgutter'
+" Git commit messages, diffs and more
+Plug 'rhysd/git-messenger.vim'
 " Which and exec functions targeted at local node projects
 Plug 'jaawerth/nrun.vim'
 " Run async progs
 Plug 'neomake/neomake'
+" Visual status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -41,6 +46,8 @@ Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Pairs of {} and stuff
 Plug 'jiangmiao/auto-pairs'
+" Easily surround sutff with tags, brackets, quotes, etc
+Plug 'tpope/vim-surround'
 " ag plugin
 " Plug 'rking/ag.vim' 
 " fuzzy searching using fzf

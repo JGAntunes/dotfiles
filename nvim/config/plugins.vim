@@ -8,6 +8,9 @@ autocmd Filetype javascript let g:neomake_javascript_semistandard_exe = nrun#Whi
 autocmd Filetype javascript let g:neomake_javascript_standard_exe = nrun#Which('standard')
 autocmd! BufWritePost *.js Neomake
 
+" Show open buffers
+let g:airline#extensions#tabline#enabled = 1
+
 " Shell linting setup
 let g:neomake_shell_enabled_makers = ['shellcheck']
 let g:neomake_shellcheck_args = ['-fgcc']
