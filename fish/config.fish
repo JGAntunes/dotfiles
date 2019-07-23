@@ -9,6 +9,7 @@ set -gx theme_display_user yes
 set -gx theme_display_git yes
 set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
+set -gx LC_ALL pt_PT.UTF-8
 
 # gvm default
 fenv "source ~/.gvm/environments/default"
@@ -29,6 +30,7 @@ if test $IS_LINUX -eq 1
   set -gx SSH_AUTH_SOCK "/home/jgantunes/.gnupg/S.gpg-agent.ssh"
 else if test $IS_OSX -eq 1
   set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+  gpg-connect-agent updatestartuptty /bye
 end
 
 # add aws completions

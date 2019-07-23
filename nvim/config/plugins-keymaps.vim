@@ -1,10 +1,11 @@
 " Nerd Tree shortcut
 map <C-t> :NERDTreeToggle<CR>
 
-" Neomake navigation
-nnoremap <leader><leader>b :ll<CR>         " go to current error/warning
-nnoremap <leader><leader>m :lnext<CR>      " next error/warning
-nnoremap <leader><leader>n :lprev<CR>      " previous error/warning
+" ale
+nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+nmap <silent> <Leader>td <Plug>(ale_go_to_definition)
+nmap <silent> <Leader>tr <Plug>(ale_find_references)
 
 " Go
 " Disable GoDef default mapping

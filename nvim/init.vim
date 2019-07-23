@@ -14,6 +14,12 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'mg979/vim-visual-multi'
 " Plug 'roxma/nvim-completion-manager'
 Plug 'https://github.com/editorconfig/editorconfig-vim'
+" GraphQL syntax highlight
+Plug 'jparise/vim-graphql'
+
+" Shitty typescript :(
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Go <3
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -34,8 +40,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim'
 " Which and exec functions targeted at local node projects
 Plug 'jaawerth/nrun.vim'
-" Run async progs
-Plug 'neomake/neomake'
+" linter
+Plug 'w0rp/ale'
 " Visual status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
