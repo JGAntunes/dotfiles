@@ -21,9 +21,12 @@ Plug 'jparise/vim-graphql'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
 
-" Go <3
+" Syntax Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+" Javascript, Node and React
+Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 " Syntax support for fish script
 Plug 'dag/vim-fish'
 " Syntax support for bats
@@ -54,6 +57,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
 " Easily surround sutff with tags, brackets, quotes, etc
 Plug 'tpope/vim-surround'
+" Highlight matching tags
+Plug 'valloric/MatchTagAlways'
 " ag plugin
 " Plug 'rking/ag.vim' 
 " fuzzy searching using fzf

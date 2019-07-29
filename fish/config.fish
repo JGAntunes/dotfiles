@@ -14,6 +14,9 @@ set -gx LC_ALL pt_PT.UTF-8
 # gvm default
 fenv "source ~/.gvm/environments/default"
 
+# use ag to pipe the results to fzf, ag respects the gitignore
+set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
+
 # set the used platform
 set -gx IS_OSX 0
 set -gx IS_LINUX 0
