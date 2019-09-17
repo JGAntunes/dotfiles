@@ -31,6 +31,9 @@
 
 [includeIf "gitdir:~/workspace/shl/"]
   path = .shl.gitconfig
+
+[includeIf "gitdir:~/workspace/conde/"]
+  path = .conde.gitconfig
 # NPM needs to clone into tmp dirs
 [credential "https://gitlab.kfplc.com"]
 	helper = cache
