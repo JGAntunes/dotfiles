@@ -11,6 +11,9 @@ set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
 set -gx LC_ALL pt_PT.UTF-8
 
+# source alias
+source ~/.config/fish/alias.fish
+
 # gvm default
 fenv "source ~/.gvm/environments/default"
 
