@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [gpg]
-  program = gpg2
+  program = gpg
 
 # Legacy ~/Documents structure
 [includeIf "gitdir:~/Documents/github/"]

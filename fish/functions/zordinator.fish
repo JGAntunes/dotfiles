@@ -7,11 +7,11 @@ function zordinator -d "Ultimate zord creation tool"
   set -l options $options (fish_opt --short=c --long=copy)
   argparse $options -- $argv
 
-  set -gx keys 'fish' 'nvim' 'vim' 'ssh' 'tilde' 'yamllint'
+  set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint'
   set -gx linux_keys 'terminator'
   set -gx osx_keys
 
-  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~ ~/.config/yamllint
+  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint
   set -gx linux_paths ~/.config/terminator
   set -gx osx_paths
 
