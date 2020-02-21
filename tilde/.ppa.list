@@ -1,6 +1,7 @@
 ppa:fish-shell/release-2
 ppa:git-core/ppa
-ppa:gnome-terminator/ppa
+ppa:gnome-terminator/nightly-gtk3
 ppa:neovim-ppa/stable
 ppa:phoerious/keepassxc
 ppa:yubico/stable
+ppa:ubuntu-mozilla-security/ppa

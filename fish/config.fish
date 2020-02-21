@@ -14,9 +14,6 @@ set -gx LC_ALL pt_PT.UTF-8
 # source alias
 source ~/.config/fish/alias.fish
 
-# gvm default
-fenv "source ~/.gvm/environments/default"
-
 # use ag to pipe the results to fzf, ag respects the gitignore
 set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 
@@ -32,12 +29,8 @@ end
 
 # gpg-agent config
 set -gx GPG_TTY (tty)
-if test $IS_LINUX -eq 1
-  set -gx SSH_AUTH_SOCK "/home/jgantunes/.gnupg/S.gpg-agent.ssh"
-else if test $IS_OSX -eq 1
-  set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-  gpg-connect-agent updatestartuptty /bye
-end
+set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpg-connect-agent updatestartuptty /bye
 
 # add aws completions
 test -x (which aws_completer);\
@@ -84,7 +77,7 @@ function updateDpkgList
     or string match -q -- "*apt-get install*" $argv;
 
     # get the installed software
-    set installed (string split  -m1 -r ' ' (string trim $argv))
+    set installed (string split  -m1 -r ' ' (string trim $argv))[2]
 
     # confirm we want to submit installed software to dpkg list
     read -l -P 'Store in dpkg list file? [y/N] ' confirm

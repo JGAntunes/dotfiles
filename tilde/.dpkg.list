@@ -16,3 +16,7 @@ docker-ce					install
 gnupg2						install
 keybase						install
 keepassxc					install
+firefox           install
+bison             install
+silversearcher-ag install
+scdaemon install

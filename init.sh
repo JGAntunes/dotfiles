@@ -10,6 +10,7 @@ set_fish_shell () {
   if type "$fish_path" > /dev/null; then
     echo "$fish_path" | sudo tee -a /etc/shells
     sudo chsh -s "$fish_path"
+    chsh -s "$fish_path"
 
     # start init.fish
     $fish_path init.fish
@@ -31,6 +32,13 @@ install_nvm () {
   # manually source nvm
   \. "$HOME/.nvm/nvm.sh"
   nvm install --lts
+}
+
+install_gvm () {
+  bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+  # install go 1.4
+  gvm install go1.4 -B
+  gvm use go1.4 --default
 }
 
 # hack to go through the mess of gpg vs gpg2
@@ -68,6 +76,7 @@ fi
 get_gpg_pub_key
 set_git_hooks
 install_nvm
+install_gvm
 install_powerfonts
 neovim_py
 set_fish_shell

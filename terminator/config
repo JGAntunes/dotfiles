@@ -1,4 +1,6 @@
 [global_config]
+  borderless = True
+  dbus = False
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
   window_state = fullscreen
@@ -125,9 +127,14 @@
 [plugins]
 [profiles]
   [[default]]
+    background_color = "#001e27"
+    cursor_color = "#aaaaaa"
+    foreground_color = "#708284"
     split_to_group = True
   [[jgantunes]]
     background_color = "#001e27"
+    background_darkness = 1.0
+    background_type = transparent
     cursor_color = "#708284"
     font = Roboto Mono for Powerline 11
     foreground_color = "#708284"
