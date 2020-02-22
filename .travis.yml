@@ -3,7 +3,7 @@ matrix:
     - name: Linux
       sudo: true
       os: linux
-      dist: xenial
+      dist: bionic
       addons:
         apt:
           packages:
