@@ -2,15 +2,24 @@
 set -ex
 
 if [[ $EUID -eq 0 ]]; then
-    error "This script should not be run using sudo or as the root user"
-    exit 1
+  error "This script should not be run using sudo or as the root user"
+  exit 1
+fi
+
+# Check if we're running in our CI env
+if [[ $USER -eq travis ]]; then
+  CI_ENV=1
 fi
 
 set_fish_shell () {
   if type "$fish_path" > /dev/null; then
     echo "$fish_path" | sudo tee -a /etc/shells
     sudo chsh -s "$fish_path"
-    chsh -s "$fish_path"
+
+    # CI gets stuck waiting for password input
+    if [[ -z "$CI_ENV" ]]; then
+      chsh -s "$fish_path"
+    fi
 
     # start init.fish
     $fish_path init.fish
