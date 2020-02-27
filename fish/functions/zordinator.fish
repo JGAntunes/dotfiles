@@ -51,8 +51,10 @@ function zordinator -d "Ultimate zord creation tool"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs $plug_url
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs $plug_url
     # install Plugins for vim and neovim
-    vim +PlugInstall +qall
-    nvim +PlugInstall +qall
+    if status --is-interactive
+      vim +PlugInstall +qall
+      nvim +PlugInstall +qall
+    end
   end
 
   function copy_files
