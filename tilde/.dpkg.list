@@ -20,3 +20,11 @@ firefox           install
 bison             install
 silversearcher-ag install
 scdaemon install
+ansible install
+texlive install
+texlive-lang-european install
+texlive-lang-portuguese install
+texlive-extra-utils install
+texlive-latex-extra install
+texlive-science install
+texlive-font-utils install
