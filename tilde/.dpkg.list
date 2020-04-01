@@ -28,3 +28,4 @@ texlive-extra-utils install
 texlive-latex-extra install
 texlive-science install
 texlive-font-utils install
+nextcloud-client install
