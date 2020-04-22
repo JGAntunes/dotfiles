@@ -30,3 +30,4 @@ texlive-science install
 texlive-font-utils install
 nextcloud-client install
 net-tools install
+wireshark install
