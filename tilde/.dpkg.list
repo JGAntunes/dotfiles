@@ -31,3 +31,5 @@ texlive-font-utils install
 nextcloud-client install
 net-tools install
 wireshark install
+pandoc install
+tree install

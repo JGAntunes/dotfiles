@@ -61,8 +61,8 @@ gpg_exec () {
 }
 
 get_gpg_pub_key () {
-  gpg_exec --keyserver hkp://keys.gnupg.net --recv-keys 0xC3F49CB32A698E79
-  gpg_exec --keyserver hkp://keys.gnupg.net --recv-keys 7F28DBEB2861A2DA
+  gpg_exec --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 0xC3F49CB32A698E79
+  gpg_exec --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 7F28DBEB2861A2DA
 }
 
 
