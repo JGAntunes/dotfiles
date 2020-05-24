@@ -102,7 +102,12 @@ function updateDpkgList
   end
 end
 
-if status --is-interactive
-  set BASE16_SHELL "$DOTFILES/base16-shell"
-  source "$BASE16_SHELL/profile_helper.fish"
-end
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/joaoantunes/workspace/yld/recruitment-handbook/challenges/flexible/code/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/joaoantunes/workspace/yld/recruitment-handbook/challenges/flexible/code/node_modules/tabtab/.completions/serverless.fish
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/joaoantunes/workspace/yld/recruitment-handbook/challenges/flexible/code/node_modules/tabtab/.completions/sls.fish ]; and . /Users/joaoantunes/workspace/yld/recruitment-handbook/challenges/flexible/code/node_modules/tabtab/.completions/sls.fish
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /Users/joaoantunes/workspace/yld/recruitment-handbook/challenges/flexible/code/node_modules/tabtab/.completions/slss.fish ]; and . /Users/joaoantunes/workspace/yld/recruitment-handbook/challenges/flexible/code/node_modules/tabtab/.completions/slss.fish

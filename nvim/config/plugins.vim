@@ -43,3 +43,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " FZF.vim
 let g:fzf_prefer_tmux = 1
+
+" Go plugin config
+" close autocomplete preview
+" set completeopt=menu
+" Run goimports along gofmt on each save
+let g:go_fmt_command = "goimports"
+" Automatically get signature/type info for object under cursor
+let g:go_auto_type_info = 1
+" Autocomplete on dot press
+"au filetype go inoremap <buffer> . .<C-x><C-o>
+" Highlight
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
