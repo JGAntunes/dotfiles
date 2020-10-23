@@ -23,6 +23,7 @@ install_from_brewfile () {
 # create symlinks for cross os compatibility
 symlinks () {
   ln -sf $(which gpg) /usr/local/bin/gpg2
+  ln -sf $(which pinentry-curses) /usr/local/bin/pinentry-curses
 }
 
 install_brew

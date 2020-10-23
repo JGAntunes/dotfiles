@@ -12,4 +12,10 @@ install_from_dpkg_list () {
   sudo apt-get dselect-upgrade -y
 }
 
+# create symlinks for cross os compatibility
+symlinks () {
+  ln -sf $(which pinentry-curses) /usr/local/bin/pinentry-curses
+}
+
 install_from_dpkg_list
+symlinks

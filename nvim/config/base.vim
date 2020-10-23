@@ -47,6 +47,10 @@ nnoremap <CR> :noh<CR><CR>
 " lang
 set spelllang=en_gb
 
+" Set latex flavor
+" " Set latex flavor
+let g:tex_flavor = 'latex'
+
 " https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes
 set guicursor=
 
