@@ -27,6 +27,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+" Syntax support for handlebars
+Plug 'mustache/vim-mustache-handlebars'
 " Syntax support for fish script
 Plug 'dag/vim-fish'
 " Syntax support for bats
