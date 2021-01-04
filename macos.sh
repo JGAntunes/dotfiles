@@ -8,7 +8,7 @@ defaults write -g InitialKeyRepeat -int 10
 defaults write -g KeyRepeat -int 2
 
 install_brew () {
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 }
 
 install_from_brewfile () {
