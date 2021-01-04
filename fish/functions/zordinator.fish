@@ -9,11 +9,11 @@ function zordinator -d "Ultimate zord creation tool"
 
   set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint'
   set -gx linux_keys 'terminator'
-  set -gx osx_keys
+  set -gx osx_keys 'iterm2'
 
   set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint
   set -gx linux_paths ~/.config/terminator
-  set -gx osx_paths
+  set -gx osx_paths ~/.config/iterm2
 
   # add the platform specifc symlinks
   if test $IS_LINUX -eq 1
