@@ -14,7 +14,7 @@ install_from_dpkg_list () {
 
 # create symlinks for cross os compatibility
 symlinks () {
-  ln -sf $(which pinentry-curses) /usr/local/bin/pinentry-curses
+  ln -sf $(which pinentry-curses) /usr/local/bin/pinentry-link
 }
 
 install_from_dpkg_list
