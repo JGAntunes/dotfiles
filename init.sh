@@ -46,7 +46,8 @@ install_nvm () {
 }
 
 install_gvm () {
-  bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+  # Ignore the exit code as the script errors on re-run
+  bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) || true
   source ~/.gvm/scripts/gvm
   # install go 1.4
   gvm install go1.4 -B
