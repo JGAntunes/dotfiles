@@ -9,7 +9,10 @@ set -gx theme_display_user yes
 set -gx theme_display_git yes
 set -gx theme_display_date no
 set -gx theme_display_cmd_duration no
-set -gx LC_ALL pt_PT.UTF-8
+
+# locale config
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
 
 # source alias
 source ~/.config/fish/alias.fish
