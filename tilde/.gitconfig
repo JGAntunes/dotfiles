@@ -8,35 +8,13 @@
 [gpg]
   program = gpg
 
-# Legacy ~/Documents structure
-[includeIf "gitdir:~/Documents/github/"]
-  path = .github.gitconfig
-
-[includeIf "gitdir:~/Documents/kf/"]
-  path = .kf.gitconfig
-
-[includeIf "gitdir:~/Documents/yld/"]
-  path = .yld.gitconfig
-
 ######
 
 [includeIf "gitdir:~/workspace/github/"]
   path = .github.gitconfig
 
-[includeIf "gitdir:~/workspace/yld/"]
-  path = .yld.gitconfig
-
-[includeIf "gitdir:~/workspace/kf/"]
-  path = .kf.gitconfig
-
-[includeIf "gitdir:~/workspace/shl/"]
-  path = .shl.gitconfig
-
-[includeIf "gitdir:~/workspace/conde/"]
-  path = .conde.gitconfig
-# NPM needs to clone into tmp dirs
-[credential "https://gitlab.kfplc.com"]
-	helper = cache
+[includeIf "gitdir:~/workspace/netlify/"]
+  path = .netlify.gitconfig
 
 # aliases
 [alias]
