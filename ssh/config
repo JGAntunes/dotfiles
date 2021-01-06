@@ -3,20 +3,8 @@ Host github.com
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_yubikey_personal.pub
 
-Host github.com-yld
+Host github.com-ntfy
   HostName github.com
-  User git
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_yubikey_yld.pub
-
-Host gitlab.com-yld
-  HostName gitlab.com
-  User git
-  IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa_yubikey_yld.pub
-
-Host bitbucket.shl.systems
-  HostName bitbucket.shl.systems
   User git
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_yubikey_yld.pub
