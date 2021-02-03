@@ -4,7 +4,6 @@ function zordinator -d "Ultimate zord creation tool"
   set -l options $options (fish_opt --short=m --long=fisherman)
   set -l options $options (fish_opt --short=s --long=symlink)
   set -l options $options (fish_opt --short=v --long=vimplug)
-  set -l options $options (fish_opt --short=c --long=copy)
   argparse $options -- $argv
 
   set -gx functions_list $_flag_n $_flag_m $_flag_s $_flag_v $_flag_c
