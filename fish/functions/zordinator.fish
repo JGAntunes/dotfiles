@@ -7,6 +7,7 @@ function zordinator -d "Ultimate zord creation tool"
   set -l options $options (fish_opt --short=c --long=copy)
   argparse $options -- $argv
 
+  set -gx functions_list $_flag_n $_flag_m $_flag_s $_flag_v $_flag_c
   set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint'
   set -gx linux_keys 'terminator'
   set -gx osx_keys 'iterm2'
@@ -145,23 +146,18 @@ function zordinator -d "Ultimate zord creation tool"
     end
   end
 
-  function test_args --no-scope-shadowing
-    set has_no_args 0
-
-    [ $has_force -ge 1 -a \( "$flags" != '-f' -o "$flags" = '--force' \) -o (count $flags) -eq 0 ]; and set has_no_args 1
-
-    if test -n "$_flag_s"; or test $has_no_args -eq 1
+  if test -n "$_flag_s"
+      or not set -q functions_list[1]
       create_symlinks
-    end
-
-    if test -n "$_flag_m"; or test $has_no_args -eq 1
-      install_fisherman
-    end
-
-    if test -n "$_flag_v"; or test $has_no_args -eq 1
-      install_vim_plug
-    end
   end
 
-  test_args
+  if test -n "$_flag_m"
+      or not set -q functions_list[1]
+      install_fisherman
+  end
+
+  if test -n "$_flag_v"
+      or not set -q functions_list[1]
+      install_vim_plug
+  end
 end
