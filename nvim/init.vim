@@ -29,6 +29,8 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 " Syntax support for handlebars
 Plug 'mustache/vim-mustache-handlebars'
+" Syntax support for toml
+Plug 'cespare/vim-toml'
 " Syntax support for fish script
 Plug 'dag/vim-fish'
 " Syntax support for bats
@@ -51,16 +53,16 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-" Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 " Pairs of {} and stuff
 Plug 'jiangmiao/auto-pairs'
 " Easily surround sutff with tags, brackets, quotes, etc
 Plug 'tpope/vim-surround'
 " Highlight matching tags
 Plug 'valloric/MatchTagAlways'
+" Auto completion super powers
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ag plugin
 " Plug 'rking/ag.vim' 
 " fuzzy searching using fzf

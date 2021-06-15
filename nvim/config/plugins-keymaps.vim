@@ -10,19 +10,25 @@ nmap <silent> <Leader>tr <Plug>(ale_find_references)
 " Go
 " Disable GoDef default mapping
 let g:go_def_mapping_enabled = 0
-" Auto linting, vet and YOLO on save
-let g:go_metalinter_autosave = 1
+" Disable go-vim auto linting, vet and stuff on save
+" We're defaulting to using COC vim for it
+let g:go_metalinter_autosave = 0
+" Auto formatting and importing
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+" Show function info
+let g:go_auto_type_info = 1
 
 " snippet config
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " multicursor config
 let g:VM_maps = {}
 let g:VM_maps["Add Cursor Down"]    = '<C-j>'
 let g:VM_maps["Add Cursor Up"]      = '<C-k>'
-let g:VM_maps["Start Regex Search"] = '<Leader>g'
+let g:VM_maps["Start Regex Search"] = '<Leader>/'
 
 " FZF.vim
 nnoremap <Leader>p :Files<cr>
@@ -38,3 +44,16 @@ omap <Leader><tab> <plug>(fzf-maps-o)
 imap <c-x><c-p> <plug>(fzf-complete-path)
 imap <c-x><c-f> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" COC Vim
+" Use tab for trigger completion with characters ahead and navigate.
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
