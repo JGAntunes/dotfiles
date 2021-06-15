@@ -26,6 +26,18 @@ set -gx IS_LINUX 0
 if test (uname -s) = 'Darwin'
   set -gx IS_OSX 1
   set -gx PATH /usr/local/homebrew/bin $PATH
+  # source cargo env if present
+  if test -f $HOME/.cargo/env
+    bass source $HOME/.cargo/env
+  end
+  # source the gcloud cli if present
+  if test -f (brew --prefix)"/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+    source (brew --prefix)"/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+  end
+  # source asdf if present
+  if test -f (brew --prefix asdf)"/asdf.fish"
+    source (brew --prefix asdf)"/asdf.fish"
+  end
 else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
 end
