@@ -2,3 +2,6 @@
 	gpgsign = true
 [user]
 	signingkey = C3F49CB32A698E79
+
+[url "git@github.com"]
+	insteadOf = "https://github.com"

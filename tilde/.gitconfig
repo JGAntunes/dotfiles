@@ -23,3 +23,9 @@
     git stash -u;            \
     git stash pop stash@{1}; \
   }; f"
+
+# Strategy to reconcile divergent branches
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
