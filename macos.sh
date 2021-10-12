@@ -1,7 +1,6 @@
 #!/bin/bash
 
 fish_path=/usr/local/bin/fish
-brew_path=/usr/local/bin/brew
 
 # make the mac keyboard actually usable
 defaults write -g InitialKeyRepeat -int 10
@@ -12,10 +11,9 @@ install_brew () {
 }
 
 install_from_brewfile () {
-  $brew_path update --force
+  brew update
   echo "Installing brew dependencies, it will take 💩💩💩 loads of time. Time  a ☕️"
-  # work around for bundle failing if packages already installed :shrug:
-  $brew_path bundle --verbose --force --file=tilde/.Brewfile || true
+  brew bundle --global --verbose
   # install python support for neovim
   pip3 install --user neovim
 }

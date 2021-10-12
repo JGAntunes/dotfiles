@@ -25,7 +25,6 @@ set -gx IS_OSX 0
 set -gx IS_LINUX 0
 if test (uname -s) = 'Darwin'
   set -gx IS_OSX 1
-  set -gx PATH /usr/local/homebrew/bin $PATH
   # source cargo env if present
   if test -f $HOME/.cargo/env
     bass source $HOME/.cargo/env
