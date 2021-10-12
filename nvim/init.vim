@@ -63,6 +63,8 @@ Plug 'tpope/vim-surround'
 Plug 'valloric/MatchTagAlways'
 " Auto completion super powers
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Ruby
+Plug 'neoclide/coc-solargraph'
 " ag plugin
 " Plug 'rking/ag.vim' 
 " fuzzy searching using fzf
