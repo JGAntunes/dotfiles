@@ -48,7 +48,7 @@ Plug 'rhysd/git-messenger.vim'
 " Which and exec functions targeted at local node projects
 Plug 'jaawerth/nrun.vim'
 " linter
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 " Visual status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -65,12 +65,16 @@ Plug 'valloric/MatchTagAlways'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Ruby
 Plug 'neoclide/coc-solargraph'
+Plug 'tpope/vim-rails'
 " ag plugin
 " Plug 'rking/ag.vim' 
 " fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
+
+" Coc extensions
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-go']
 
 " load configs
 runtime! config/*.vim

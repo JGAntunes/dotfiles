@@ -2,10 +2,10 @@
 map <C-t> :NERDTreeToggle<CR>
 
 " ale
-nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>j <Plug>(ale_next_wrap)
-nmap <silent> <Leader>td <Plug>(ale_go_to_definition)
-nmap <silent> <Leader>tr <Plug>(ale_find_references)
+" nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
+" nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+" nmap <silent> <Leader>td <Plug>(ale_go_to_definition)
+" nmap <silent> <Leader>tr <Plug>(ale_find_references)
 
 " Go
 " Disable GoDef default mapping
@@ -57,3 +57,9 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" COC Vim GoTo code navigation.
+nmap <silent> <Leader>gd <plug>(coc-definition)
+nmap <silent> <Leader>gy <plug>(coc-type-definition)
+nmap <silent> <Leader>gi <plug>(coc-implementation)
+nmap <silent> <Leader>gr <plug>(coc-references)
