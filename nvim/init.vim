@@ -47,14 +47,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim'
 " Which and exec functions targeted at local node projects
 Plug 'jaawerth/nrun.vim'
-" linter
-" Plug 'w0rp/ale'
 " Visual status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Snippets
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 " Pairs of {} and stuff
 Plug 'jiangmiao/auto-pairs'
 " Easily surround sutff with tags, brackets, quotes, etc
@@ -64,10 +59,11 @@ Plug 'valloric/MatchTagAlways'
 " Auto completion super powers
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Ruby
-Plug 'neoclide/coc-solargraph'
 Plug 'tpope/vim-rails'
-" ag plugin
-" Plug 'rking/ag.vim' 
+" Terraform
+Plug 'hashivim/vim-terraform'
+" Syntax highlighting plugin for JSON with C-style line (e.g. coc-settings.json)
+Plug 'kevinoid/vim-jsonc'
 " fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
