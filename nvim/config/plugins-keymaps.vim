@@ -14,15 +14,11 @@ let g:go_def_mapping_enabled = 0
 " We're defaulting to using COC vim for it
 let g:go_metalinter_autosave = 0
 " Auto formatting and importing
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_autosave = 1
+" let g:go_fmt_command = "goimports"
 " Show function info
 let g:go_auto_type_info = 1
 
-" snippet config
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " multicursor config
 let g:VM_maps = {}
@@ -63,3 +59,4 @@ nmap <silent> <Leader>gd <plug>(coc-definition)
 nmap <silent> <Leader>gy <plug>(coc-type-definition)
 nmap <silent> <Leader>gi <plug>(coc-implementation)
 nmap <silent> <Leader>gr <plug>(coc-references)
+

@@ -70,7 +70,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-go']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-go', 'coc-prettier']
 
 " load configs
 runtime! config/*.vim

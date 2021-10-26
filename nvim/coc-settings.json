@@ -10,5 +10,7 @@
 			"initializationOptions": {},
 			"settings": {}
 		}
-	}
+	},
+  "coc.preferences.formatOnSaveFiletypes": [ "terraform", "go", "ruby", "typescriptreact", "typescript", "javascript", "javascriptreact",  "json", "jsonc"],
+  "coc.preferences.willSaveHandlerTimeout": 5000
 }
