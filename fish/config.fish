@@ -26,8 +26,10 @@ set -gx IS_LINUX 0
 if test (uname -s) = 'Darwin'
   set -gx IS_OSX 1
   
-  # source brew config env vars and relevant binary changes
-  eval (/opt/homebrew/bin/brew shellenv)
+  # M1 Macbook - source brew config env vars and relevant binary changes
+  if test -f /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv)
+  end
 
   # source cargo env if present
   if test -f $HOME/.cargo/env
