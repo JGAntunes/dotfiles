@@ -8,6 +8,17 @@ defaults write -g KeyRepeat -int 2
 
 install_brew () {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+  # M1 Macbook homebrew install is in /opt/homebrew
+  if [[ -f "/opt/homebrew/bin/brew" ]]; then
+    if ! grep -Fxq  'eval "$(/opt/homebrew/bin/brew shellenv)"' /Users/jgantunes/.bash_profile; then
+      echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/jgantunes/.bash_profile
+    fi
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # The fish binary is now under /opt/homebrew too
+    fish_path=$(which fish)
+  fi
 }
 
 install_from_brewfile () {
