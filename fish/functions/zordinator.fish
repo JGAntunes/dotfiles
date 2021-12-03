@@ -43,7 +43,7 @@ function zordinator -d "Ultimate zord creation tool"
   function install_fisherman
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
     # install fisher dependencies
-    fisher
+    fisher update
   end
 
   function install_vim_plug
