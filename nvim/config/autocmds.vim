@@ -17,8 +17,8 @@ autocmd FileType javascript.jsx setlocal commentstring=//\ %s
 " test
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
 " definition
-autocmd FileType go nmap <leader>d  <Plug>(go-def)
+autocmd FileType go nmap <leader>gd  <Plug>(go-def)
 " back from definition
-autocmd FileType go nmap <leader>s  <Plug>(go-def-pop)
+autocmd FileType go nmap <leader>gs  <Plug>(go-def-pop)
 " get function callers
-autocmd FileType go nmap <leader>c  <Plug>(go-callers)
+autocmd FileType go nmap <leader>gc  <Plug>(go-callers)

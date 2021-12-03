@@ -1,16 +1,32 @@
 {
-	"languageserver": {
-		"terraform": {
-			"command": "terraform-ls",
-			"args": ["serve"],
-			"filetypes": [
-				"terraform",
-				"tf"
-			],
-			"initializationOptions": {},
-			"settings": {}
-		}
-	},
-  "coc.preferences.formatOnSaveFiletypes": [ "terraform", "go", "ruby", "typescriptreact", "typescript", "javascript", "javascriptreact",  "json", "jsonc"],
-  "coc.preferences.willSaveHandlerTimeout": 5000
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "terraform",
+    "ruby",
+    "rb",
+    "typescriptreact",
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc"
+  ],
+  "coc.preferences.willSaveHandlerTimeout": 5000,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.logLevel": "debug",
+  "solargraph.useBundler": true,
+  // "solargraph.transport": "external",
+  // "solargraph.externalServer": {
+  //   "host": "localhost",
+  //   "port": 7658
+  // }
 }

@@ -9,13 +9,13 @@ map <C-t> :NERDTreeToggle<CR>
 
 " Go
 " Disable GoDef default mapping
-let g:go_def_mapping_enabled = 0
+" let g:go_def_mapping_enabled = 0
 " Disable go-vim auto linting, vet and stuff on save
 " We're defaulting to using COC vim for it
-let g:go_metalinter_autosave = 0
+" let g:go_metalinter_autosave = 0
 " Auto formatting and importing
-" let g:go_fmt_autosave = 1
-" let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 " Show function info
 let g:go_auto_type_info = 1
 

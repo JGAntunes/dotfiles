@@ -21,6 +21,9 @@ Plug 'jparise/vim-graphql'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+" Still need ale for things such as shellcheck
+Plug 'w0rp/ale'
+
 " Syntax Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Javascript, Node and React
@@ -70,7 +73,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-go', 'coc-prettier']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-prettier']
 
 " load configs
 runtime! config/*.vim
