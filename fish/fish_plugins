@@ -3,7 +3,6 @@ oh-my-fish/theme-bobthefish
 oh-my-fish/plugin-foreign-env
 evanlucas/fish-kubectl-completions
 FabioAntunes/fish-nvm
-oh-my-fish/plugin-thefuck
 jethrokuan/fzf
 jgantunes/fish-gvm
 fabioantunes/base16-fish-shell
