@@ -34,9 +34,9 @@ if test (uname -s) = 'Darwin'
     source (brew --prefix)"/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
   end
   # source asdf if present
-  if test -f (brew --prefix asdf)"/asdf.fish"
-    source (brew --prefix asdf)"/asdf.fish"
-  end
+  # if test -f (brew --prefix asdf)"/asdf.fish"
+  #   source (brew --prefix asdf)"/asdf.fish"
+  # end
 else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
 end
