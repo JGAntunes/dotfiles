@@ -5,6 +5,6 @@
 [user]
 	signingkey = 7F28DBEB2861A2DA
 
-[url "ssh://git@github.com-ntfy"]
-	insteadOf = "https://github.com"
+[url "ssh://git@github.com-ntfy:"]
+	insteadOf = "https://github.com/"
 
