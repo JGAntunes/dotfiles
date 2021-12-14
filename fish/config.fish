@@ -39,6 +39,15 @@ if test (uname -s) = 'Darwin'
   if test -f (brew --prefix)"/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
     source (brew --prefix)"/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
   end
+
+  # source rbenv if present
+  if test -f (brew --prefix)"/bin/rbenv"
+    rbenv init - fish | source
+  end
+
+  # set the include files dir for linkinf purposes in M1 Macbook
+  set -gx CPATH (brew --prefix)/include
+  set -gx LDFLAGS -L(brew --prefix)/lib
   # source asdf if present
   # if test -f (brew --prefix asdf)"/asdf.fish"
   #   source (brew --prefix asdf)"/asdf.fish"
