@@ -8,14 +8,6 @@
 [gpg]
   program = gpg
 
-######
-
-[includeIf "gitdir:~/workspace/github/"]
-  path = .github.gitconfig
-
-[includeIf "gitdir:~/workspace/netlify/"]
-  path = .netlify.gitconfig
-
 # aliases
 [alias]
   stash-untracked = "!f() {    \
@@ -31,3 +23,19 @@
 	defaultBranch = main
 [gc]
 	autoDetach = false
+[credential]
+	helper = store
+
+# Private Golang modules rewrite
+# https://stackoverflow.com/questions/59797272/receiving-fatal-could-not-read-username-for-https-github-com-terminal-prom
+[url "git@github.com-ntfy:netlify"]
+	insteadOf = "https://github.com/netlify"
+
+######
+
+[includeIf "gitdir:~/workspace/github/"]
+  path = .github.gitconfig
+
+[includeIf "gitdir:~/workspace/netlify/"]
+  path = .netlify.gitconfig
+

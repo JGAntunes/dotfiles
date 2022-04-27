@@ -3,5 +3,6 @@
 [user]
 	signingkey = C3F49CB32A698E79
 
+# Default to ssh instead of https
 [url "git@github.com:"]
 	insteadOf = "https://github.com/"

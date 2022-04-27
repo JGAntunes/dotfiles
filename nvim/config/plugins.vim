@@ -1,11 +1,3 @@
-" MatchTagAlways, add javascript
-let g:mta_filetypes = {
-  \ 'javascript': 1,
-  \ 'html' : 1,
-  \ 'xhtml' : 1,
-  \ 'xml' : 1
-\}
-
 " ale
 " Linting setup
 " let g:ale_fixers = {

@@ -58,7 +58,7 @@ Plug 'jiangmiao/auto-pairs'
 " Easily surround sutff with tags, brackets, quotes, etc
 Plug 'tpope/vim-surround'
 " Highlight matching tags
-Plug 'valloric/MatchTagAlways'
+" Plug 'valloric/MatchTagAlways'
 " Auto completion super powers
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Ruby
@@ -71,6 +71,12 @@ Plug 'kevinoid/vim-jsonc'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
+
+" Check's for vimrc background and sources it
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source $HOME/.vimrc_background
+endif
 
 " Coc extensions
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-prettier']

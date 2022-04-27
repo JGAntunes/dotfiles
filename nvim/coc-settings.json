@@ -23,7 +23,8 @@
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "solargraph.logLevel": "debug",
-  "solargraph.useBundler": true,
+  "solargraph.trace.server": "messages",
+  "solargraph.useBundler": true
   // "solargraph.transport": "external",
   // "solargraph.externalServer": {
   //   "host": "localhost",

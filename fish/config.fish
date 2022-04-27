@@ -1,8 +1,14 @@
 # misc vars
 set -gx DOTFILES ~/workspace/github/dotfiles
 
+# set default editor
+set -gx VISUAL vim
+set -gx EDITOR "$VISUAL"
+
 # theme configs
-set -gx theme_color_scheme solarized
+set -gx theme_color_scheme terminal
+set -gx theme_display_node yes
+set -gx theme_display_ruby yes
 set -gx theme_display_git_untracked yes
 set -gx theme_display_k8s_context yes
 set -gx theme_display_user yes
@@ -29,6 +35,9 @@ if test (uname -s) = 'Darwin'
   # M1 Macbook - source brew config env vars and relevant binary changes
   if test -f /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
+
+    # Netlify specific
+    set -gx PKG_CONFIG_PATH /opt/homebrew/Cellar/openssl@3/3.0.1/lib/pkgconfig
   end
 
   # source cargo env if present
