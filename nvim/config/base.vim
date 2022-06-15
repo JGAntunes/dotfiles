@@ -66,8 +66,10 @@ nnoremap <Leader>9 "*p
 nnoremap <Leader>t :10split +te<CR>
 " shortcut split vertically
 map <Leader>v :vsplit<CR>
+map <Leader>h :split<CR>
 " shortcut exit window
 map <Leader>q :q<CR>
+map <Leader>qa :qa<CR>
 
 " map uppercase and mixed case
 :command! W w

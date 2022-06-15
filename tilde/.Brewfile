@@ -18,6 +18,7 @@ brew "bash"
 brew "circleci"
 brew "yara"
 brew "clamav"
+brew "container-diff"
 brew "cookiecutter"
 brew "docker-compose", link: false
 brew "fish"

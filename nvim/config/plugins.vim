@@ -62,3 +62,10 @@ let g:go_highlight_build_constraints = 1
 let g:go_def_mapping_enabled = 0
 " Automatically highlight matching identifiers
 let g:go_auto_sameids = 1
+" Need to dynamically link some native dependencies
+let g:go_build_tags = 'dynamic'
+" Terminal configuration enable it and reuse it (relevant when running tests)
+let g:go_term_enabled = 1
+let g:go_term_reuse = 1
+" Buffer settings for the go def function (i.e. reuse the same if open)
+let g:go_def_reuse_buffer = 1

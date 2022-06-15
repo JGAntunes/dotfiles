@@ -12,7 +12,7 @@ map <C-t> :NERDTreeToggle<CR>
 " let g:go_def_mapping_enabled = 0
 " Disable go-vim auto linting, vet and stuff on save
 " We're defaulting to using COC vim for it
-" let g:go_metalinter_autosave = 0
+let g:go_metalinter_autosave = 1
 " Auto formatting and importing
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
@@ -31,7 +31,7 @@ nnoremap <Leader>p :Files<cr>
 nnoremap <Leader>f :Ag<cr>
 nnoremap <Leader>b :Buffers<cr>
 
-" FZF maps, LOL, LOVE IT @FabioAntunes
+" FZF maps
 nmap <Leader><tab> <plug>(fzf-maps-n)
 xmap <Leader><tab> <plug>(fzf-maps-x)
 omap <Leader><tab> <plug>(fzf-maps-o)
