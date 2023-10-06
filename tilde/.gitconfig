@@ -28,7 +28,7 @@
 
 # Private Golang modules rewrite
 # https://stackoverflow.com/questions/59797272/receiving-fatal-could-not-read-username-for-https-github-com-terminal-prom
-[url "git@github.com-ntfy:netlify"]
+[url "ssh://git@github.com-ntfy/netlify"]
 	insteadOf = "https://github.com/netlify"
 
 ######
@@ -38,4 +38,5 @@
 
 [includeIf "gitdir:~/workspace/netlify/"]
   path = .netlify.gitconfig
-
+[includeIf "gitdir:/tmp/gopath/pkg/mod"]
+  path = .netlify.gitconfig

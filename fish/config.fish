@@ -54,9 +54,20 @@ if test (uname -s) = 'Darwin'
     rbenv init - fish | source
   end
 
-  # set the include files dir for linkinf purposes in M1 Macbook
+  # source unversioned python binaries if present
+  if test -d (brew --prefix python)"/libexec/bin"
+    fish_add_path (brew --prefix python)"/libexec/bin"
+  end
+
+  # set gnu-tar as default tar command if present
+  # if test -f (brew --prefix)"/opt/gnu-tar/libexec/gnubin"
+  #   fish_add_path (brew --prefix)"/opt/gnu-tar/libexec/gnubin"
+  # end
+
+  # set the include files dir for linking purposes in M1 Macbook
   set -gx CPATH (brew --prefix)/include
   set -gx LDFLAGS -L(brew --prefix)/lib
+  set -gx CGO_LDFLAGS -L(brew --prefix)/lib
   # source asdf if present
   # if test -f (brew --prefix asdf)"/asdf.fish"
   #   source (brew --prefix asdf)"/asdf.fish"
