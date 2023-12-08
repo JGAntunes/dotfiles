@@ -1,5 +1,4 @@
 #!/bin/bash
-set -ex
 
 if [[ $EUID -eq 0 ]]; then
   error "This script should not be run using sudo or as the root user"
@@ -39,7 +38,7 @@ install_powerfonts () {
 }
 
 install_nvm () {
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.7/install.sh | bash
   # manually source nvm
   \. "$HOME/.nvm/nvm.sh"
   nvm install --lts
@@ -93,5 +92,3 @@ install_gvm
 install_powerfonts
 neovim_py
 set_fish_shell
-
-set +ex

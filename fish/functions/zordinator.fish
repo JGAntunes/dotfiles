@@ -8,11 +8,11 @@ function zordinator -d "Ultimate zord creation tool"
 
   set -gx functions_list $_flag_n $_flag_m $_flag_s $_flag_v $_flag_c
   set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint'
-  set -gx linux_keys 'terminator'
+  set -gx linux_keys 'sway'
   set -gx osx_keys 'iterm2'
 
   set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint
-  set -gx linux_paths ~/.config/terminator
+  set -gx linux_paths ~/.config/sway
   set -gx osx_paths ~/.config/iterm2
 
   # add the platform specifc symlinks
@@ -70,7 +70,7 @@ function zordinator -d "Ultimate zord creation tool"
 
   function create_symlink
     if test $has_force -ge 1
-      ln -Fs $argv[1] $argv[2]
+      ln -fs $argv[1] $argv[2]
     else
       ln -s $argv[1] $argv[2]
     end

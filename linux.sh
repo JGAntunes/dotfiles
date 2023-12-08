@@ -17,5 +17,5 @@ symlinks () {
   sudo ln -sf $(which pinentry-curses) /usr/local/bin/pinentry-link
 }
 
-# install_from_dpkg_list
+install_from_dpkg_list
 symlinks
