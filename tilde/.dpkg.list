@@ -25,3 +25,4 @@ alacritty install
 software-properties-common install
 nextcloud-desktop install
 dnsutils install
+ansible install
