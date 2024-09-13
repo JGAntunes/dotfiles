@@ -46,7 +46,11 @@ let g:go_fmt_command = "goimports"
 " Automatically get signature/type info for object under cursor
 let g:go_auto_type_info = 1
 " Autocomplete on dot press
-au filetype go inoremap <buffer> . .<C-x><C-o>
+" au filetype go inoremap <buffer> . .<C-x><C-o>
+
+" Disable vim-go autocompletion and let COC vim do its thing
+let g:go_code_completion_enabled = 1
+
 " Run vet, golint and errcheck on save
 let g:go_metalinter_autosave_enabled = ['all']
 let g:go_metalinter_deadline = "10s"

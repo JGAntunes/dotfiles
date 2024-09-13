@@ -6,6 +6,29 @@
       "filetypes": ["terraform", "tf"],
       "initializationOptions": {},
       "settings": {}
+    },
+    "ruby-lsp": {
+      "command": "ruby-lsp",
+      "initializationOptions": {
+        "experimentalFeaturesEnabled": false,
+        "enabledFeatures": [
+          "codeActions",
+          "diagnostics",
+          "documentHighlights",
+          "documentLink",
+          "documentSymbols",
+          "foldingRanges",
+          "formatting",
+          "hover",
+          "inlayHint",
+          "onTypeFormatting",
+          "selectionRanges",
+          "semanticHighlighting",
+          "completion"
+        ],
+        "formatter": "auto"
+      },
+      "filetypes": ["ruby"]
     }
   },
   "coc.preferences.formatOnSaveFiletypes": [
@@ -19,12 +42,12 @@
     "json",
     "jsonc"
   ],
-  "coc.preferences.willSaveHandlerTimeout": 5000,
-  "solargraph.diagnostics": true,
-  "solargraph.formatting": true,
-  "solargraph.logLevel": "debug",
-  "solargraph.trace.server": "messages",
-  "solargraph.useBundler": true
+  "coc.preferences.willSaveHandlerTimeout": 5000
+  // "solargraph.diagnostics": false,
+  // "solargraph.formatting": false,
+  // "solargraph.logLevel": "debug",
+  // "solargraph.trace.server": "messages",
+  // "solargraph.useBundler": true
   // "solargraph.transport": "external",
   // "solargraph.externalServer": {
   //   "host": "localhost",

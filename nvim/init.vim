@@ -79,7 +79,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-prettier', 'coc-go']
+let g:coc_global_extensions = ['coc-json', 'coc-deno', 'coc-tsserver', 'coc-prettier', 'coc-go']
 
 " load configs
 runtime! config/*.vim
