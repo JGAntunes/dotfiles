@@ -24,6 +24,7 @@ install_brew () {
 install_from_brewfile () {
   brew update
   echo "Installing brew dependencies, it will take 💩💩💩 loads of time. Time  a ☕️"
+  ln -sf $(pwd)/tilde/.Brewfile ~/.Brewfile
   brew bundle --global --verbose
   # install python support for neovim
   pip3 install --user neovim
@@ -31,8 +32,8 @@ install_from_brewfile () {
 
 # create symlinks for cross os compatibility
 symlinks () {
-  ln -sf $(which gpg) /usr/local/bin/gpg2
-  ln -sf $(which pinentry-mac) /usr/local/bin/pinentry-link
+  sudo ln -sf $(which gpg) /usr/local/bin/gpg2
+  sudo ln -sf $(which pinentry-mac) /usr/local/bin/pinentry-link
 }
 
 install_brew

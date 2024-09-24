@@ -11,7 +11,7 @@ if [[ $USER -eq travis ]]; then
 fi
 
 set_fish_shell () {
-  if type "$fish_path" > /dev/null; then
+  if type $fish_path > /dev/null; then
     echo "$fish_path" | sudo tee -a /etc/shells
     # Change both sudo and user shell
     sudo chsh -s "$fish_path"
