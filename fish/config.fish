@@ -35,9 +35,6 @@ if test (uname -s) = 'Darwin'
   # M1 Macbook - source brew config env vars and relevant binary changes
   if test -f /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
-
-    # Netlify specific
-    set -gx PKG_CONFIG_PATH /opt/homebrew/Cellar/openssl@3/3.0.1/lib/pkgconfig
   end
 
   # source cargo env if present
@@ -59,19 +56,12 @@ if test (uname -s) = 'Darwin'
     fish_add_path (brew --prefix python)"/libexec/bin"
   end
 
-  # set gnu-tar as default tar command if present
-  # if test -f (brew --prefix)"/opt/gnu-tar/libexec/gnubin"
-  #   fish_add_path (brew --prefix)"/opt/gnu-tar/libexec/gnubin"
-  # end
 
   # set the include files dir for linking purposes in M1 Macbook
   set -gx CPATH (brew --prefix)/include
   set -gx LDFLAGS -L(brew --prefix)/lib
   set -gx CGO_LDFLAGS -L(brew --prefix)/lib
-  # source asdf if present
-  # if test -f (brew --prefix asdf)"/asdf.fish"
-  #   source (brew --prefix asdf)"/asdf.fish"
-  # end
+
 else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
 end

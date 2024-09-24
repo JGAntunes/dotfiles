@@ -1,10 +1,10 @@
 [user]
-	email = joao@netlify.com
+	email = joao@replicated.com
 [commit]
 	gpgsign = true
 [user]
 	signingkey = 7F28DBEB2861A2DA
 
-[url "git@github.com-ntfy:"]
+[url "git@github.com-work:"]
 	insteadOf = "https://github.com/"
 

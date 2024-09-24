@@ -28,10 +28,10 @@
 
 [includeIf "gitdir:~/workspace/github/"]
   path = .github.gitconfig
-[includeIf "gitdir:~/workspace/netlify/"]
-  path = .netlify.gitconfig
+[includeIf "gitdir:~/workspace/work/"]
+  path = .work.gitconfig
 [includeIf "gitdir:/tmp/gopath/pkg/mod"]
-  path = .netlify.gitconfig
+  path = .work.gitconfig
 
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
