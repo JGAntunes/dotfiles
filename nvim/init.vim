@@ -70,6 +70,8 @@ Plug 'kevinoid/vim-jsonc'
 " fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Setup copilot
+Plug 'github/copilot.vim'
 call plug#end()
 
 " Check's for vimrc background and sources it

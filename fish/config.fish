@@ -76,6 +76,17 @@ test -x (which aws_completer);\
   and complete --command aws --no-files --arguments\
   '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 
+# setup direnv
+if test (which direnv)
+  direnv hook fish | source
+  set -g direnv_fish_mode eval_after_arrow
+end
+
+# setup krew
+if test -d $HOME/.krew/bin
+  fish_add_path $HOME/.krew/bin
+end
+
 # postexec hook to update dependency lists
 function postexec --on-event fish_postexec
   if test (count $argv) -ge 1; and test $IS_OSX -eq 1

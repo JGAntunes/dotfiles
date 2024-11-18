@@ -3,13 +3,8 @@ Host github.com
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_yubikey_personal.pub
 
-Host github.com-ntfy
+Host github.com-work
   HostName github.com
   User git
   IdentitiesOnly yes
   IdentityFile ~/.ssh/id_rsa_yubikey_yld.pub
-
-Host *.amazonaws.com
-  User git 
-  IdentityFile ~/.ssh/id_rsa_aws_yld
-  IdentitiesOnly yes
