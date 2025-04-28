@@ -7,5 +7,6 @@ vim.keymap.set("", "\\", ",", { noremap = true, silent = true, desc = "Map \\ to
 
 
 require("config.lazy")
+require("config.options")
 require("config.autocommands")
 require("config.keymaps")
