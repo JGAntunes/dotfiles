@@ -1,10 +1,20 @@
 -- Clipboard: Yank and Paste to System Clipboard
 vim.keymap.set("v", "<Leader>8", '"*y', { noremap = true, silent = true, desc = "Yank to system clipboard" })
-vim.keymap.set("v", "<Leader>9", '"*p', { noremap = true, silent = true, desc = "Paste from system clipboard (visual)" })
+vim.keymap.set(
+  "v",
+  "<Leader>9",
+  '"*p',
+  { noremap = true, silent = true, desc = "Paste from system clipboard (visual)" }
+)
 vim.keymap.set("n", "<Leader>9", '"*p', { noremap = true, silent = true, desc = "Paste from system clipboard" })
 
 -- Open terminal in 10-line horizontal split
-vim.keymap.set("n", "<Leader>t", ":10split +te<CR>", { noremap = true, silent = true, desc = "Open terminal (10 lines)" })
+vim.keymap.set(
+  "n",
+  "<Leader>t",
+  ":10split +te<CR>",
+  { noremap = true, silent = true, desc = "Open terminal (10 lines)" }
+)
 
 -- Window splits
 vim.keymap.set("", "<Leader>v", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical split" })

@@ -5,8 +5,7 @@ vim.g.mapleader = ","
 -- Remap '\' to ',' (dunno why I have this though)
 vim.keymap.set("", "\\", ",", { noremap = true, silent = true, desc = "Map \\ to ," })
 
-
-require("config.lazy")
 require("config.options")
+require("config.lazy")
 require("config.autocommands")
 require("config.keymaps")

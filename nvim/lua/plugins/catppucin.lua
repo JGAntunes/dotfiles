@@ -2,8 +2,8 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin", -- explicitly set the name so you can refer to it easily
-    priority = 1000,     -- load before all other plugins
-    lazy = false,        -- load immediately on startup
+    priority = 1000, -- load before all other plugins
+    lazy = false, -- load immediately on startup
     config = function()
       require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -34,4 +34,3 @@ return {
     end,
   },
 }
-

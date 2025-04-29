@@ -1,12 +1,12 @@
 -- Auto commands
-local rootgroup = vim.api.nvim_create_augroup('jgantunes.root', { clear = true })
+local rootgroup = vim.api.nvim_create_augroup("jgantunes.root", { clear = true })
 
 -- Automatically rebalance windows on resize
 vim.api.nvim_create_autocmd("VimResized", {
   pattern = "*",
   group = rootgroup,
   command = "wincmd =",
-  desc = "Automatically rebalance windows on resize"
+  desc = "Automatically rebalance windows on resize",
 })
 
 -- Set json filetype for rc files
@@ -28,5 +28,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.commentstring = "// %s"
   end,
 })
-
-

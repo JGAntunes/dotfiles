@@ -3,8 +3,8 @@ return {
   init = function()
     -- Set the mappings for multicursor
     vim.g.VM_maps = {
-      ["Add Cursor Down"]    = "<C-j>",
-      ["Add Cursor Up"]      = "<C-k>",
+      ["Add Cursor Down"] = "<C-j>",
+      ["Add Cursor Up"] = "<C-k>",
       ["Start Regex Search"] = "<Leader>/",
     }
   end,

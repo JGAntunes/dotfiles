@@ -13,7 +13,7 @@ return {
     {
       "<C-t>",
       function()
-        require("neo-tree.command").execute({ source = 'last', reveal = true, toggle = true })
+        require("neo-tree.command").execute({ source = "last", reveal = true, toggle = true })
       end,
       desc = "[Neotree] File Explorer",
     },
