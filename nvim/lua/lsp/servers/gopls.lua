@@ -1,0 +1,5 @@
+local lsp = require("lsp.shared-config")
+
+return {
+  on_attach = lsp.on_attach,
+}

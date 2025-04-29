@@ -1,5 +1,3 @@
--- ./lua/plugins/lsp.lua
-
 return {
   {
     "neovim/nvim-lspconfig",
@@ -15,27 +13,14 @@ return {
         automatic_installation = true, -- This isn't currently working with nvim 11 - https://github.com/williamboman/mason-lspconfig.nvim/issues/535
       })
 
-      -- Common on_attach
-      local on_attach = function(client, bufnr)
-        local map = function(mode, keys, func, desc)
-          vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = desc })
-        end
-
-        map("n", "gd", vim.lsp.buf.definition, "Go to Definition")
-        map("n", "K", vim.lsp.buf.hover, "Hover Docs")
-        map("n", "gi", vim.lsp.buf.implementation, "Go to Implementation")
-        map("n", "gr", vim.lsp.buf.references, "References")
-        map("n", "<leader>rn", vim.lsp.buf.rename, "Rename Symbol")
-        map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
-      end
-
       -- Setup servers
       require("mason-lspconfig").setup_handlers({
         function(server_name)
-          vim.lsp.config[server_name] = {
-            capabilities = capabilities,
-            on_attach = on_attach,
-          }
+          local ok, custom_config = pcall(require, "lsp.servers." .. server_name)
+          if not ok then
+            custom_config = require("lsp.shared-config") -- fallback to shared
+          end
+          vim.lsp.config[server_name] = custom_config
           vim.lsp.enable(server_name)
         end,
       })
