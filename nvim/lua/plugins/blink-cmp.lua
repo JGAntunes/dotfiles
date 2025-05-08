@@ -33,13 +33,44 @@ return {
       nerd_font_variant = "mono",
     },
 
-    -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
+    completion = {
+      -- Show documentation when selecting a completion item
+      documentation = { auto_show = true, auto_show_delay_ms = 500 },
+
+      -- Display a preview of the selected item on the current line
+      -- ghost_text = { enabled = true },
+      trigger = { prefetch_on_insert = false },
+    },
+
+    signature = { enabled = true },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+      -- default = { "lsp", "path", "snippets", "buffer", "minuet" },
+      -- providers = {
+      --   minuet = {
+      --     name = "minuet",
+      --     module = "minuet.blink",
+      --     async = true,
+      --     -- Should match minuet.config.request_timeout * 1000,
+      --     -- since minuet.config.request_timeout is in seconds
+      --     timeout_ms = 3000,
+      --     score_offset = 50, -- Gives minuet higher priority among suggestions
+      --   },
+      -- },
+      providers = {
+        lazydev = {
+          name = "LazyDev",
+          module = "lazydev.integrations.blink",
+          -- make lazydev completions top priority (see `:h blink.cmp`)
+          score_offset = 100,
+        },
+      },
+      per_filetype = {
+        codecompanion = { "codecompanion" },
+      },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

@@ -6,23 +6,16 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
+      -- Common LSP settings
+      vim.lsp.config("*", require("lsp.shared-config"))
+      -- Custom LSP setup
+      vim.lsp.config("lua_ls", require("lsp.lua_ls"))
+
       -- Mason setup
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "gopls" },
-        automatic_installation = true, -- This isn't currently working with nvim 11 - https://github.com/williamboman/mason-lspconfig.nvim/issues/535
-      })
-
-      -- Setup servers
-      require("mason-lspconfig").setup_handlers({
-        function(server_name)
-          local ok, custom_config = pcall(require, "lsp.servers." .. server_name)
-          if not ok then
-            custom_config = require("lsp.shared-config") -- fallback to shared
-          end
-          vim.lsp.config[server_name] = custom_config
-          vim.lsp.enable(server_name)
-        end,
+        ensure_installed = { "lua_ls", "gopls", "ts_ls", "helm_ls", "yamlls" },
+        automatic_enable = true,
       })
 
       -- Tune diagnostics
@@ -34,7 +27,7 @@ return {
         severity_sort = true, -- show most serious first
         float = {
           border = "rounded",
-          source = "always", -- show where the error comes from (lsp, etc.)
+          source = true,
           header = "",
           prefix = "",
         },

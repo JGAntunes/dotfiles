@@ -38,6 +38,7 @@ return {
     default_source = "last",
     close_if_last_window = true,
     source_selector = {
+      truncation_character = "…",
       winbar = true,
       statusline = false,
     },

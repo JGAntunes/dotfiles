@@ -23,3 +23,7 @@ vim.opt.tabstop = 2 -- a tab appears as 2 spaces
 vim.opt.shiftwidth = 2 -- auto-indent uses 2 spaces
 vim.opt.softtabstop = 2 -- pressing tab inserts 2 spaces
 vim.opt.autoindent = true
+
+-- configure splits
+vim.opt.splitbelow = true -- horizontal splits open below
+vim.opt.splitright = true -- vertical splits open to the right
