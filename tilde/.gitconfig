@@ -16,6 +16,11 @@
     git stash pop stash@{1}; \
   }; f"
 
+# If the current branch has no upstream branch set, set it automatically
+# i.e. git checkout -b <branch>; git push will automatically do git push --set-upstream origin <branch>
+[push]
+  autoSetupRemote = true
+
 # Strategy to reconcile divergent branches
 [pull]
 	rebase = true
