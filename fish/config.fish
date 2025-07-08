@@ -87,6 +87,9 @@ if test -d $HOME/.krew/bin
   fish_add_path $HOME/.krew/bin
 end
 
+# setup starship prompt
+starship init fish | source
+
 # postexec hook to update dependency lists
 function postexec --on-event fish_postexec
   if test (count $argv) -ge 1; and test $IS_OSX -eq 1

@@ -7,11 +7,11 @@ return {
   config = function()
     require("conform").setup({
       format_on_save = {
-        lsp_fallback = true,
+        lsp_format = "fallback",
         timeout_ms = 500,
       },
       formatters_by_ft = {
-        go = { "goimports", "gofumpt" },
+        go = { lsp_format = "prefer" },
         lua = { "stylua" },
         javascript = { "prettierd", "prettier" },
         -- other mappings

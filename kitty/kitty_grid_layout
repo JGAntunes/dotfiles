@@ -1,0 +1,8 @@
+# kitty_grid_layout (no extension)
+layout grid
+
+# Create 4 windows in a 2x2 grid
+launch
+launch
+launch
+launch

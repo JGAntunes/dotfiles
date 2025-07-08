@@ -7,11 +7,11 @@ function zordinator -d "Ultimate zord creation tool"
   argparse $options -- $argv
 
   set -gx functions_list $_flag_n $_flag_m $_flag_s $_flag_v $_flag_c
-  set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint'
+  set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint' 'starship.toml' 'kitty'
   set -gx linux_keys 'sway'
   set -gx osx_keys 'iterm2'
 
-  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint
+  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint ~/.config/starship.toml ~/.config/kitty
   set -gx linux_paths ~/.config/sway
   set -gx osx_paths ~/.config/iterm2
 
@@ -117,7 +117,12 @@ function zordinator -d "Ultimate zord creation tool"
     for key in $keys
       if set -l index (contains -i -- $key $keys)
         set src_dir ( string join '' $dir '/' $key )
-        iterate $src_dir $paths[$index]
+        # the key we want to symlink is a file and not a directory
+        if test -f $src_dir
+          create_symlink $src_dir $paths[$index]
+        else
+          iterate $src_dir $paths[$index]
+        end 
       end
     end
 

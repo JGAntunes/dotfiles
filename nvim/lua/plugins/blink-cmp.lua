@@ -1,7 +1,10 @@
 return {
   "saghen/blink.cmp",
   -- optional: provides snippets for the snippet source
-  dependencies = { "rafamadriz/friendly-snippets" },
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+    "giuxtaposition/blink-cmp-copilot",
+  },
 
   -- use a release tag to download pre-built binaries
   version = "1.*",
@@ -38,7 +41,7 @@ return {
       documentation = { auto_show = true, auto_show_delay_ms = 500 },
 
       -- Display a preview of the selected item on the current line
-      -- ghost_text = { enabled = true },
+      ghost_text = { enabled = true },
       trigger = { prefetch_on_insert = false },
     },
 
@@ -47,7 +50,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+      default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
       -- default = { "lsp", "path", "snippets", "buffer", "minuet" },
       -- providers = {
       --   minuet = {
@@ -66,6 +69,20 @@ return {
           module = "lazydev.integrations.blink",
           -- make lazydev completions top priority (see `:h blink.cmp`)
           score_offset = 100,
+        },
+        copilot = {
+          -- transform_items = function(items)
+          --   -- Set the icon and name for Copilot items
+          --   for _, item in ipairs(items) do
+          --     item.kind_icon = ""
+          --     item.kind_name = "Copilot"
+          --   end
+          --   return items
+          -- end,
+          name = "copilot",
+          module = "blink-cmp-copilot",
+          score_offset = 100,
+          async = true,
         },
       },
       per_filetype = {
