@@ -10,11 +10,12 @@ return {
       vim.lsp.config("*", require("lsp.shared-config"))
       -- Custom LSP setup
       vim.lsp.config("lua_ls", require("lsp.lua_ls"))
+      vim.lsp.config("eslint", require("lsp.eslint"))
 
       -- Mason setup
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "gopls", "ts_ls", "helm_ls", "yamlls" },
+        ensure_installed = { "lua_ls", "gopls", "ts_ls", "eslint", "helm_ls", "yamlls" },
         automatic_enable = true,
       })
 

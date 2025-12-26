@@ -44,15 +44,6 @@ install_nvm () {
   nvm install --lts
 }
 
-install_gvm () {
-  # Ignore the exit code as the script errors on re-run
-  bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) || true
-  source ~/.gvm/scripts/gvm
-  # install go 1.4
-  gvm install go1.4 -B
-  gvm use go1.4 --default
-}
-
 # hack to go through the mess of gpg vs gpg2
 gpg_exec () {
   if gpg2 --version >/dev/null 2>&1; then
@@ -88,7 +79,6 @@ fi
 get_gpg_pub_key
 set_git_hooks
 install_nvm
-install_gvm
 install_powerfonts
 neovim_py
 set_fish_shell

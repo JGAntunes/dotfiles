@@ -35,3 +35,6 @@ vim.api.nvim_create_user_command("QA", "qa", {})
 vim.api.nvim_create_user_command("Qa", "qa", {})
 vim.api.nvim_create_user_command("Up", "up", {})
 vim.api.nvim_create_user_command("UP", "up", {})
+
+-- Exit terminal mode with <Esc>
+vim.keymap.set("t", "<C-Esc>", [[<C-\><C-n>]], { noremap = true, desc = "Exit terminal mode" })

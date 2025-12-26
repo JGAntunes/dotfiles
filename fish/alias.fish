@@ -8,3 +8,9 @@ alias rgpg-stubs "gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
 
 # Replicated Specific alias
 alias sbc "sbctl shell --support-bundle-location $1"
+
+# SSH with the kitty terminfo files
+alias kssh "kitten ssh"
+
+# Reload kitty config
+alias kitty-reload "kitty @ load-config"

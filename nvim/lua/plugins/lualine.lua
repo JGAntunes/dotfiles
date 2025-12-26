@@ -1,7 +1,10 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "franco-ruggeri/codecompanion-lualine.nvim",
+  },
   config = function()
     require("lualine").setup({
       options = {
@@ -22,7 +25,7 @@ return {
           { "diagnostics", sources = { "nvim_diagnostic" } },
           { "filename", path = 1 }, -- show relative path
         },
-        lualine_x = { "encoding", "filetype" },
+        lualine_x = { "codecompanion", "encoding", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
