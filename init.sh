@@ -27,18 +27,8 @@ set_fish_shell () {
   fi
 }
 
-install_powerfonts () {
-  # clone
-  command git clone https://github.com/powerline/fonts.git --depth=1 && \
-  # install
-  cd fonts && \
-  command bash install.sh && \
-  # clean-up a bit
-  cd ..; rm -rf fonts/
-}
-
 install_nvm () {
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.7/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
   # manually source nvm
   \. "$HOME/.nvm/nvm.sh"
   nvm install --lts
@@ -79,6 +69,5 @@ fi
 get_gpg_pub_key
 set_git_hooks
 install_nvm
-install_powerfonts
 neovim_py
 set_fish_shell
