@@ -2,4 +2,4 @@
 
 source fish/config.fish
 source fish/functions/zordinator.fish
-zordinator --symlink --fisherman --vimplug
+zordinator --symlink --fisherman

@@ -6,9 +6,6 @@ alias rgpg "gpg-connect-agent updatestartuptty /bye"
 # use this whenever you're inserting a different key with the same set of gpg-keys
 alias rgpg-stubs "gpg-connect-agent \"scd serialno\" \"learn --force\" /bye"
 
-# Replicated Specific alias
-alias sbc "sbctl shell --support-bundle-location $1"
-
 # SSH with the kitty terminfo files
 alias kssh "kitten ssh"
 
