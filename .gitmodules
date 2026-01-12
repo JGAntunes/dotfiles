@@ -1,4 +1,0 @@
-[submodule "consolas-powerline"]
-	path = consolas-powerline
-	url = https://github.com/Znuff/consolas-powerline.git
-	ignore = dirty
