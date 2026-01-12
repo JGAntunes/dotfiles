@@ -3,23 +3,22 @@ function zordinator -d "Ultimate zord creation tool"
   set -l options (fish_opt --short=f --long=force)
   set -l options $options (fish_opt --short=m --long=fisherman)
   set -l options $options (fish_opt --short=s --long=symlink)
-  set -l options $options (fish_opt --short=v --long=vimplug)
   argparse $options -- $argv
 
-  set -gx functions_list $_flag_n $_flag_m $_flag_s $_flag_v $_flag_c
+  set -gx functions_list $_flag_n $_flag_m $_flag_s $_flag_c
   set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint' 'starship.toml' 'kitty'
   set -gx linux_keys 'sway'
-  set -gx osx_keys ''
+  set -gx osx_keys 
 
   set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint ~/.config/starship.toml ~/.config/kitty
   set -gx linux_paths ~/.config/sway
   set -gx osx_paths
 
   # add the platform specifc symlinks
-  if test $IS_LINUX -eq 1
+  if test $IS_LINUX -eq 1; and test (count $linux_keys) -gt 0
     set -gx keys $keys $linux_keys
     set -gx paths $paths $linux_paths
-  else if test $IS_OSX -eq 1
+  else if test $IS_OSX -eq 1; and test (count $osx_keys) -gt 0
     set -gx keys $keys $osx_keys
     set -gx paths $paths $osx_paths
   end
@@ -44,28 +43,6 @@ function zordinator -d "Ultimate zord creation tool"
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
     # install fisher dependencies
     fisher update
-  end
-
-  function install_vim_plug
-    set plug_url https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs $plug_url
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs $plug_url
-    # install Plugins for vim and neovim
-    if status --is-interactive
-      vim +PlugInstall +qall
-      nvim +PlugInstall +qall
-    end
-  end
-
-  function copy_files
-    set origin  $dir/consolas-powerline/*.ttf
-    set dest ~/Library/Fonts/
-
-    if test $has_force -ge 1
-      cp -f $origin $dest
-    else
-      cp $origin $dest
-    end
   end
 
   function create_symlink
@@ -158,10 +135,5 @@ function zordinator -d "Ultimate zord creation tool"
   if test -n "$_flag_m"
       or not set -q functions_list[1]
       install_fisherman
-  end
-
-  if test -n "$_flag_v"
-      or not set -q functions_list[1]
-      install_vim_plug
   end
 end
