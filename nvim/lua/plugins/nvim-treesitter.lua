@@ -1,16 +1,12 @@
 return {
   -- Core Treesitter plugin
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
     config = function()
-      require("nvim-treesitter.configs").setup({
-        -- Languages to install parsers for
-        ensure_installed = {
+      require("nvim-treesitter").install(
+        {
           "bash",
           "c",
           "cpp",
@@ -34,33 +30,7 @@ return {
           "toml",
           "dockerfile",
           "tsx",
-        },
-
-        -- Enable code highlighting
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-
-        -- Enable smarter indentation (optional)
-        indent = {
-          enable = true,
-        },
-
-        -- Optional: Text objects (e.g. `af`, `if`, `ac`, `ic`)
-        textobjects = {
-          select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["ac"] = "@class.outer",
-              ["ic"] = "@class.inner",
-            },
-          },
-        },
-      })
+        })
     end,
   },
 
