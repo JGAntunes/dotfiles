@@ -11,3 +11,9 @@ alias kssh "kitten ssh"
 
 # Reload kitty config
 alias kitty-reload "kitty @ load-config"
+
+# Reload fish config
+alias fish-reload "source ~/.config/fish/config.fish"
+
+# Kubectl alias
+alias kubectl k

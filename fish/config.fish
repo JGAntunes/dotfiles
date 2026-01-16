@@ -42,8 +42,8 @@ if test (uname -s) = 'Darwin'
     bass source $HOME/.cargo/env
   end
   # source the gcloud cli if present
-  if test -f (brew --prefix)"/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
-    source (brew --prefix)"/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+  if test -f (brew --prefix)"/Caskroom/gcloud-cli/latest/google-cloud-sdk/path.fish.inc"
+    source (brew --prefix)"/Caskroom/gcloud-cli/latest/google-cloud-sdk/path.fish.inc"
   end
 
   # source rbenv if present
@@ -66,10 +66,15 @@ else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
 end
 
+# add gopath/bin to path
+if test (which go); and test -n (go env GOPATH)
+  fish_add_path (go env GOPATH)/bin
+end
+
 # gpg-agent config
-set -gx GPG_TTY (tty)
-set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-gpg-connect-agent updatestartuptty /bye > /dev/null
+set -x GPG_TTY (tty)
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 # add aws completions
 test -x (which aws_completer);\
