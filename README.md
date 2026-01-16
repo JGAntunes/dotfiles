@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/JGAntunes/dotfiles.svg?branch=master)](https://travis-ci.org/JGAntunes/dotfiles)
-
 # Dotfiles AKA ZORDinator
 Heavily based on [@FabioAntunes](https://github.com/FabioAntunes) [ones](https://github.com/FabioAntunes/dotfiles). Thanks bud :+1:
 
