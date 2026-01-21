@@ -31,12 +31,14 @@
 [credential]
 	helper = store
 
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+# Private Golang modules rewrite
+[url "git@github.com-work:clickhouse"]
+	insteadOf = "https://github.com/clickhouse"
+
 [includeIf "gitdir:~/workspace/github/"]
   path = .github.gitconfig
 [includeIf "gitdir:~/workspace/work/"]
   path = .work.gitconfig
-[includeIf "gitdir:/tmp/gopath/pkg/mod"]
-  path = .work.gitconfig
-
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
