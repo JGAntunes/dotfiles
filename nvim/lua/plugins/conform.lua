@@ -11,7 +11,7 @@ return {
         timeout_ms = 500,
       },
       formatters_by_ft = {
-        go = { lsp_format = "prefer" },
+        -- go = { lsp_format = "prefer" },
         lua = { "stylua" },
         javascript = { "prettierd", "prettier", "eslint_d" },
         typescript = { "prettierd", "prettier", "eslint_d" },

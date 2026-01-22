@@ -11,6 +11,8 @@ return {
       -- Custom LSP setup
       vim.lsp.config("lua_ls", require("lsp.lua_ls"))
       vim.lsp.config("eslint", require("lsp.eslint"))
+      vim.lsp.config("gopls", require("lsp.gopls"))
+      vim.lsp.config("helm_ls", require("lsp.helm_ls"))
 
       -- Mason setup
       require("mason").setup()
@@ -21,11 +23,11 @@ return {
 
       -- Tune diagnostics
       vim.diagnostic.config({
-        virtual_text = true, -- still keep inline error signs (or set false to hide)
-        signs = true, -- left gutter signs
-        underline = true, -- underline the problem
+        virtual_text = true,      -- still keep inline error signs (or set false to hide)
+        signs = true,             -- left gutter signs
+        underline = true,         -- underline the problem
         update_in_insert = false, -- do not update diagnostics while typing
-        severity_sort = true, -- show most serious first
+        severity_sort = true,     -- show most serious first
         float = {
           border = "rounded",
           source = true,

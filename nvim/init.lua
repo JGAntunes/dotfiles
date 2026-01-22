@@ -6,6 +6,7 @@ vim.g.mapleader = ","
 vim.keymap.set("", "\\", ",", { noremap = true, silent = true, desc = "Map \\ to ," })
 
 require("config.options")
+require("config.filetypes")
 require("config.lazy")
 require("config.autocommands")
 require("config.keymaps")
