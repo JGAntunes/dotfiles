@@ -2,8 +2,8 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin", -- explicitly set the name so you can refer to it easily
-    priority = 1000, -- load before all other plugins
-    lazy = false, -- load immediately on startup
+    priority = 1000,     -- load before all other plugins
+    lazy = false,        -- load immediately on startup
     config = function()
       require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -32,6 +32,8 @@ return {
 
       -- set colorscheme
       vim.cmd.colorscheme("catppuccin")
+      -- set background based on THEME env variable (light or dark)
+      vim.o.background = (vim.env.THEME == "light") and "light" or "dark"
     end,
   },
 }

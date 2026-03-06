@@ -2,19 +2,8 @@
 set -gx DOTFILES ~/workspace/github/dotfiles
 
 # set default editor
-set -gx VISUAL vim
+set -gx VISUAL nvim
 set -gx EDITOR "$VISUAL"
-
-# theme configs
-set -gx theme_color_scheme terminal
-set -gx theme_display_node yes
-set -gx theme_display_ruby yes
-set -gx theme_display_git_untracked yes
-set -gx theme_display_k8s_context yes
-set -gx theme_display_user yes
-set -gx theme_display_git yes
-set -gx theme_display_date no
-set -gx theme_display_cmd_duration no
 
 # locale config
 set -gx LC_ALL en_US.UTF-8
@@ -22,6 +11,9 @@ set -gx LANG en_US.UTF-8
 
 # source alias
 source ~/.config/fish/alias.fish
+
+# set the selected theme based on the OS option (light/dark)
+set -gx THEME (theme)
 
 # use ag to pipe the results to fzf, ag respects the gitignore
 set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
@@ -66,14 +58,19 @@ else if string match -q -- "*Linux*"  (uname -s)
   set -gx IS_LINUX 1
 end
 
-# add gopath/bin to path
-if test (which go); and test -n (go env GOPATH)
-  fish_add_path (go env GOPATH)/bin
+# go specific configs
+if test (which go) 
+  # set GOPRIVATE
+  set -gx GOPRIVATE "go.clickhouse.com/dpa/*"
+  # add gopath/bin to path
+  if test -n (go env GOPATH)
+    fish_add_path (go env GOPATH)/bin
+  end
 end
 
 # gpg-agent config
-set -x GPG_TTY (tty)
-set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -gx GPG_TTY (tty)
+set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 # add aws completions
@@ -92,7 +89,19 @@ if test -d $HOME/.krew/bin
   fish_add_path $HOME/.krew/bin
 end
 
+# setup claude code
+if test -d $HOME/.local/bin
+  fish_add_path $HOME/.local/bin
+end
+
 # setup starship prompt
+# set the config file based on the theme
+if test $THEME = 'dark'
+  set -gx STARSHIP_CONFIG $HOME/.config/starship/dark.toml
+else if test $THEME = 'light'
+  set -gx STARSHIP_CONFIG $HOME/.config/starship/light.toml
+end
+# initialize the starship prompt
 starship init fish | source
 
 # postexec hook to update dependency lists
@@ -159,3 +168,7 @@ function updateDpkgList
     end
   end
 end
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :

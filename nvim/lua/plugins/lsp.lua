@@ -13,11 +13,12 @@ return {
       vim.lsp.config("eslint", require("lsp.eslint"))
       vim.lsp.config("gopls", require("lsp.gopls"))
       vim.lsp.config("helm_ls", require("lsp.helm_ls"))
+      vim.lsp.config("bashls", require("lsp.bashls"))
 
       -- Mason setup
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "gopls", "ts_ls", "eslint", "helm_ls", "yamlls" },
+        ensure_installed = { "lua_ls", "gopls", "ts_ls", "eslint", "helm_ls", "yamlls", "bashls" },
         automatic_enable = true,
       })
 

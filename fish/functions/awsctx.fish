@@ -6,6 +6,7 @@ function awsctx -d "Select and change the current AWS profile using fzf and SSO 
   end
   echo "Switching to AWS profile $profile"
   set -gx AWS_PROFILE $profile
+  set -q AWS_REGION; set -gx AWS_REGION us-west-2
   aws sts get-caller-identity || aws sso login
 end
 

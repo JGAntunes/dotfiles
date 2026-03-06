@@ -6,11 +6,11 @@ function zordinator -d "Ultimate zord creation tool"
   argparse $options -- $argv
 
   set -gx functions_list $_flag_n $_flag_m $_flag_s $_flag_c
-  set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint' 'starship.toml' 'kitty'
+  set -gx keys 'fish' 'nvim' 'vim' 'ssh'  'gnupg' 'tilde' 'yamllint' 'starship' 'kitty'
   set -gx linux_keys 'sway'
   set -gx osx_keys 
 
-  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint ~/.config/starship.toml ~/.config/kitty
+  set -gx paths ~/.config/fish ~/.config/nvim ~/.vim ~/.ssh ~/.gnupg ~ ~/.config/yamllint ~/.config/starship ~/.config/kitty
   set -gx linux_paths ~/.config/sway
   set -gx osx_paths
 

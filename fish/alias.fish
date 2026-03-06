@@ -16,4 +16,4 @@ alias kitty-reload "kitty @ load-config"
 alias fish-reload "source ~/.config/fish/config.fish"
 
 # Kubectl alias
-alias kubectl k
+alias k "kubectl"

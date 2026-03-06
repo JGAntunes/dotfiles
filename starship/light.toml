@@ -25,7 +25,7 @@ $battery\
 $status\
 $character"""
 
-palette = "catppuccin_mocha"
+palette = "catppuccin_latte"
 
 # Palette definitions
 [palettes.catppuccin_latte]

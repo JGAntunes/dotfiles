@@ -83,11 +83,11 @@ return {
       -- if you need to setup your ui for input and select, you can do it here
       -- go_input = require('guihua.input').input -- set to vim.ui.input to disable guihua input
       -- go_select = require('guihua.select').select -- vim.ui.select to disable guihua select
-      lsp_document_formatting = true,
+      lsp_document_formatting = false,
       -- set to true: use gopls to format
       -- false if you want to use other formatter tool(e.g. efm, nulls)
       lsp_inlay_hints = {
-        enable = true,          -- dsiabling this because of - https://github.com/ray-x/go.nvim/issues/579
+        enable = false,         -- dsiabling this because of - https://github.com/ray-x/go.nvim/issues/579
       },
       gopls_cmd = nil,          -- if you need to specify gopls path and cmd, e.g {"/home/user/lsp/gopls", "-logfile","/var/log/gopls.log" }
       gopls_remote_auto = true, -- add -remote=auto to gopls
@@ -150,17 +150,18 @@ return {
         -- Debug (dlv via nvim-dap)
         map("<leader>d", "<cmd>GoDebug<CR>", "Go: debug (dlv)")
         map("<leader>dt", "<cmd>GoDebug test<CR>", "Go: debug tests (dlv)")
+
+        -- Add things (macro like stuff)
+        map("<leader>gae", "<cmd>GoIfErr<CR>", "Go: add if err != nil")
+        -- map("<leader>gat", "<cmd>GoAddTag<CR>", "Go: add tags")
+        map("<leader>gaf", "<cmd>GoFillStruct<CR>", "Go: fill struct fields")
+        map("<leader>gat", "<cmd>GoAddTest<CR>", "Go: add test for current function")
+
+        -- Remove things (macro like stuff)
+        map("<leader>grt", "<cmd>GoRmTag<CR>", "Go: remove tags")
       end,
     })
 
-    local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = "*.go",
-      callback = function()
-        require('go.format').goimports()
-      end,
-      group = format_sync_grp,
-    })
     return {
       -- lsp_keymaps = false,
       -- other options

@@ -1,8 +1,6 @@
 [user]
 	name = JGAntunes
 	email = me@jgantunes.com
-[core]
-	editor = vim
 [push]
 	default = simple
 [gpg]

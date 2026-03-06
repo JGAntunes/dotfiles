@@ -19,9 +19,9 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "full"
 -- tabs and indent
 vim.opt.expandtab = true -- use spaces, not tabs
-vim.opt.tabstop = 2 -- a tab appears as 2 spaces
-vim.opt.shiftwidth = 2 -- auto-indent uses 2 spaces
-vim.opt.softtabstop = 2 -- pressing tab inserts 2 spaces
+vim.opt.tabstop = 2      -- a tab appears as 2 spaces
+vim.opt.shiftwidth = 2   -- auto-indent uses 2 spaces
+vim.opt.softtabstop = 2  -- pressing tab inserts 2 spaces
 vim.opt.autoindent = true
 
 -- configure splits

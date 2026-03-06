@@ -5,29 +5,49 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- make sure we use native fzf
   },
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep" },
-    { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
-    { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Help Tags" },
-    { "gd", "<cmd>Telescope lsp_definitions<CR>", desc = "LSP definitions" },
-    { "gi", "<cmd>Telescope lsp_implementations<CR>", desc = "LSP implementations" },
-    { "gr", "<cmd>Telescope lsp_references<CR>", desc = "LSP references" },
-    { "<leader>sd", "<cmd>Telescope diagnostics<CR>", desc = "LSP diagnostics" },
-    { "<leader>sk", "<cmd>Telescope keymaps<CR>", desc = "Fuzzy search Keymaps" },
-    { "<leader>sj", "<cmd>Telescope jumplist<CR>", desc = "Fuzzy search Jump List" },
+    { "<leader>ff", "<cmd>Telescope find_files<CR>",                desc = "Find Files" },
+    { "<leader>fg", "<cmd>Telescope live_grep<CR>",                 desc = "Live Grep" },
+    { "<leader>fb", "<cmd>Telescope buffers<CR>",                   desc = "Buffers" },
+    { "<leader>fh", "<cmd>Telescope help_tags<CR>",                 desc = "Help Tags" },
+    { "gd",         "<cmd>Telescope lsp_definitions<CR>",           desc = "LSP definitions" },
+    { "gi",         "<cmd>Telescope lsp_implementations<CR>",       desc = "LSP implementations" },
+    { "gr",         "<cmd>Telescope lsp_references<CR>",            desc = "LSP references" },
+    { "<leader>sd", "<cmd>Telescope diagnostics<CR>",               desc = "LSP diagnostics" },
+    { "<leader>sk", "<cmd>Telescope keymaps<CR>",                   desc = "Fuzzy search Keymaps" },
+    { "<leader>sj", "<cmd>Telescope jumplist<CR>",                  desc = "Fuzzy search Jump List" },
     { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Fuzzy search in the current buffer" },
-    { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Fuzzy search Git commits" },
+    { "<leader>gc", "<cmd>Telescope git_commits<CR>",               desc = "Fuzzy search Git commits" },
   },
   config = function()
     local actions = require("telescope.actions")
 
     require("telescope").setup({
+      defaults = {
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+          "--glob=!.git",
+          "--glob=!.claude",
+        },
+      },
+      pickers = {
+        find_files = {
+          hidden = true,
+          find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--exclude", ".claude" },
+        },
+      },
       extensions = {
         fzf = {
-          fuzzy = true, -- enable fuzzy matching
+          fuzzy = true,                   -- enable fuzzy matching
           override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true, -- override the file sorter
-          case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+          override_file_sorter = true,    -- override the file sorter
+          case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
         },
       },
       mappings = {
