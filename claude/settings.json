@@ -1,0 +1,17 @@
+{
+  "model": "sonnet",
+  "vim": true,
+  "theme": "system",
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(kubectl get*)",
+      "Bash(kubectl describe*)",
+      "Bash(brew list*)",
+      "Bash(brew info*)"
+    ]
+  }
+}
