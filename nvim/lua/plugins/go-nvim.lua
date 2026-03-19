@@ -162,6 +162,18 @@ return {
       end,
     })
 
+    -- conform's lsp_format only triggers textDocument/formatting, which handles gofumpt
+    -- but not import organization. goimports() calls gopls's source.organizeImports
+    -- code action which adds missing imports, removes unused ones, and formats.
+    local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*.go",
+      callback = function()
+        require('go.format').goimports()
+      end,
+      group = format_sync_grp,
+    })
+
     return {
       -- lsp_keymaps = false,
       -- other options
