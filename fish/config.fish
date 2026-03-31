@@ -94,6 +94,11 @@ if test -d $HOME/.local/bin
   fish_add_path $HOME/.local/bin
 end
 
+# mason LSP binaries (shared by nvim and claude code)
+if test -d $HOME/.local/share/nvim/mason/bin
+  fish_add_path $HOME/.local/share/nvim/mason/bin
+end
+
 # setup starship prompt
 # set the config file based on the theme
 if test $THEME = 'dark'

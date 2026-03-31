@@ -4,6 +4,7 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "b0o/schemastore.nvim",
     },
     config = function()
       -- Common LSP settings
@@ -14,11 +15,14 @@ return {
       vim.lsp.config("gopls", require("lsp.gopls"))
       vim.lsp.config("helm_ls", require("lsp.helm_ls"))
       vim.lsp.config("bashls", require("lsp.bashls"))
+      vim.lsp.config("ruff", require("lsp.ruff"))
+      vim.lsp.config("jsonls", require("lsp.jsonls"))
+      vim.lsp.config("yamlls", require("lsp.yamlls"))
 
       -- Mason setup
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "gopls", "ts_ls", "eslint", "helm_ls", "yamlls", "bashls" },
+        ensure_installed = { "lua_ls", "gopls", "ts_ls", "eslint", "helm_ls", "yamlls", "jsonls", "bashls", "pyright", "ruff" },
         automatic_enable = true,
       })
 
